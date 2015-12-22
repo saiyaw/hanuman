@@ -19,13 +19,15 @@ $(function() {
             data: 5
         }, {
             "data": null,
-            "defaultContent": "<button  class='btn btn-link' data-toggle='modal' data-target='#patientmodal'>More</button>"
+            "defaultContent": "<button class='btn btn-link'>More</button>"
         }]
 
     });
 
-    $('#patient tbody').on('click', 'button', function() {
+    $('#candidatelist tbody').on('click', 'button', function() {
         var pdata = candidatetable.row($(this).parents('tr')).data();
+        window.location.href = "/view";
+/*
         $.ajax({
             url: '/getcandidatebyid',
             type: 'POST',
@@ -42,6 +44,8 @@ $(function() {
         }).always(function() {
             console.log("complete");
         });
+
+*/
     });
 
 
