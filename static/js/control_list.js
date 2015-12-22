@@ -1,32 +1,49 @@
 $(function() {
-    init_list_page();
-
-
-    $('button[name=btn_list_add]').click(function() {
-        var btnid = $(this).attr('id');
-        var id = btnid.substr(btnid.lastIndexOf("_") + 1);
-        add_one_question(id);
+    var candidatetable = $('#candidatelist').DataTable({
+        stateSave: true,
+        "ajax": {
+            "url": "/getcandidatelist",
+            "dataSrc": ''
+        },
+        columns: [{
+            data: 0
+        }, {
+            data: 1
+        }, {
+            data: 2
+        }, {
+            data: 3
+        }, {
+            data: 4
+        }, {
+            data: 5
+        }, {
+            "data": null,
+            "defaultContent": "<button  class='btn btn-link' data-toggle='modal' data-target='#patientmodal'>More</button>"
+        }]
 
     });
 
-    $('button[name=btn_list_remove]').click(function() {
-        var btnid = $(this).attr('id');
-        var id = btnid.substr(btnid.lastIndexOf("_") + 1);
-        remove_one_question(id);
-
+    $('#patient tbody').on('click', 'button', function() {
+        var pdata = candidatetable.row($(this).parents('tr')).data();
+        $.ajax({
+            url: '/getcandidatebyid',
+            type: 'POST',
+            async: false,
+            data: {
+                "id": pdata[0]
+            },
+        }).done(function(output) {
+            var result = JSON.stringify(output);
+            //           alert(result);
+        }).fail(function() {
+            console.log("error");
+            alert("error");
+        }).always(function() {
+            console.log("complete");
+        });
     });
 
-    $('button[name=btn_list_edit]').click(function() {
-        var btnid = $(this).attr('id');
-        var id = btnid.substr(btnid.lastIndexOf("_") + 1);
-        $("#question_edit_id").val(id);
-        $("#question_edit").val($("#span_list_question_" + id).text());
-
-    });
-
-    $('#btn_list_question_save_change').click(function(){
-        update_one_question($("#question_edit_id").val(), $("#question_edit").val());
-    });
 
 
 });
