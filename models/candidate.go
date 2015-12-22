@@ -1,6 +1,8 @@
 package models
 
 import (
+	"crypto/md5"
+	"encoding/hex"
 	"log"
 	"time"
 
@@ -11,11 +13,12 @@ import (
 type Candidate struct {
 	Id       int64 `orm:"pk;auto"`
 	Fullname string
-	Age      int64
+	Age      string
 	Gender   string
 	Mobile   string
-	Email    string `orm:"unique"`
-	Workyear int64
+	Email    string
+	Workyear string
+	Md5      string    `orm:"unique"`
 	Created  time.Time `orm:"auto_now_add;type(datetime)"`
 	Updated  time.Time `orm:"auto_now;type(datetime)"`
 }
@@ -26,7 +29,16 @@ func (c Candidate) Get() error {
 	return err
 }
 
+func (c *Candidate) getMD5() {
+	s := c.Fullname + c.Age + c.Gender + c.Mobile + c.Email + c.Workyear
+	hasher := md5.New()
+	hasher.Write([]byte(s))
+	c.Md5 = hex.EncodeToString(hasher.Sum(nil))
+}
+
 func (c *Candidate) Insert() error {
+	c.getMD5()
+
 	o := orm.NewOrm()
 	o.Begin()
 
@@ -45,6 +57,6 @@ func (c *Candidate) Insert() error {
 func (c Candidate) GetCandidates() []orm.ParamsList {
 	o := orm.NewOrm()
 	lists := []orm.ParamsList{}
-	o.QueryTable("candidate").ValuesList(&lists, "Id", "Fullname", "Age", "Gender", "Mobile", "Email", "Workyear")
+	o.QueryTable("candidate").ValuesList(&lists, "Id", "Fullname", "Age", "Gender", "Mobile", "Email", "Workyear", "md5")
 	return lists
 }

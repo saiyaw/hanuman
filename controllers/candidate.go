@@ -15,8 +15,7 @@ func (c *CandidateController) InsertOneCandidate() {
 	var candidate models.Candidate
 	candidate.Fullname = c.GetString("fullname")
 
-	age, _ := c.GetInt64("age")
-	candidate.Age = age
+	candidate.Age = c.GetString("age")
 
 	candidate.Gender = c.GetString("gender")
 
@@ -24,8 +23,7 @@ func (c *CandidateController) InsertOneCandidate() {
 
 	candidate.Email = c.GetString("email")
 
-	workyear, _ := c.GetInt64("workyear")
-	candidate.Workyear = workyear
+	candidate.Workyear = c.GetString("workyear")
 
 	candidate.Insert()
 	c.Ctx.WriteString(strconv.FormatInt(candidate.Id, 10))
