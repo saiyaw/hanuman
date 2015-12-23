@@ -26,7 +26,8 @@ $(function() {
 
     $('#candidatelist tbody').on('click', 'button', function() {
         var pdata = candidatetable.row($(this).parents('tr')).data();
-        window.location.href = "/view";
+        $.cookie("md5", pdata[7]);
+        window.location.href = "/candidate";
 /*
         $.ajax({
             url: '/getcandidatebyid',

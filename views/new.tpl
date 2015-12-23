@@ -1,5 +1,6 @@
 <script type="text/javascript" src="../static/js/func_new.js"></script>
 <script type="text/javascript" src="../static/js/control_new.js"></script>
+
 <div class="panel panel-primary" id="divbasic">
   <div class="panel-heading">基本信息</div>
   <div class="panel-body">

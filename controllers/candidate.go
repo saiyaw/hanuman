@@ -11,6 +11,11 @@ type CandidateController struct {
 	beego.Controller
 }
 
+func (c *CandidateController) Get() {
+	c.TplNames = "candidate.tpl"
+	c.Layout = "layout.tpl"
+}
+
 func (c *CandidateController) InsertOneCandidate() {
 	var candidate models.Candidate
 	candidate.Fullname = c.GetString("fullname")

@@ -35,7 +35,7 @@ $(function() {
             type: 'POST',
             async: false,
             data: {
-                "id": pdata[0]
+                "id": pdata[7]
             },
         }).done(function(output) {
             var result = JSON.stringify(output);
