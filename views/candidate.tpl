@@ -14,7 +14,7 @@
 				<div class="col-xs-3">
 					<div class="input-group">
 						<span class="input-group-addon" id="basic-addon-age">年龄:</span>
-						<input type="text" id="iage" class="form-control" placeholder="年龄" aria-describedby="basic-addon-age">
+						<input type="number" id="iage" class="form-control" placeholder="年龄" aria-describedby="basic-addon-age">
 					</div>
 				</div>
 				<div class="col-xs-3">
@@ -29,7 +29,7 @@
 				<div class="col-xs-3">
 					<div class="input-group">
 						<span class="input-group-addon" id="basic-addon-workyear">工作年限:</span>
-						<input type="text" id="iworkyear" class="form-control" placeholder="工作年限" aria-describedby="basic-addon-workyear">
+						<input type="number" id="iworkyear" class="form-control" placeholder="工作年限" aria-describedby="basic-addon-workyear">
 					</div>
 				</div>
 			</div>
@@ -40,7 +40,7 @@
 				<div class="col-xs-6">
 					<div class="input-group">
 						<span class="input-group-addon" id="basic-addon-email">邮箱:</span>
-						<input type="text" id="iemail" class="form-control" placeholder="邮箱" aria-describedby="basic-addon-email">
+						<input type="email" id="iemail" class="form-control" placeholder="邮箱" aria-describedby="basic-addon-email">
 					</div>
 				</div>
 				<div class="col-xs-6">
