@@ -13,6 +13,7 @@
 		<script type="text/javascript" src="../static/js/jquery.dataTables.min.js"></script>
 		<script type="text/javascript" src="../static/js/dataTables.bootstrap.min.js"></script>
 		<script type="text/javascript" src="../static/js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../static/js/date.js"></script>
 		<script type="text/javascript" src="../static/js/func.js"></script>
 		
 		
@@ -29,9 +30,10 @@
 					<ul class="nav navbar-nav">
 						<li><a href="/list">列表</a></li>
 						<li><a href="/new">新建</a></li>
+						<!--
 						<li><a href="/view">查看</a></li>
 						<li><a href="/report">报告</a></li>
-						
+						-->
 					</ul>
 					<form class="navbar-form navbar-right" role="search" hidden>
 						<div class="form-group">

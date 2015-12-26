@@ -37,7 +37,7 @@ func (c *Candidate) getMD5() {
 }
 
 func (c *Candidate) Insert() error {
-	c.getMD5()
+	//	c.getMD5()
 
 	o := orm.NewOrm()
 	o.Begin()
@@ -59,4 +59,16 @@ func (c Candidate) GetCandidates() []orm.ParamsList {
 	lists := []orm.ParamsList{}
 	o.QueryTable("candidate").ValuesList(&lists, "Id", "Fullname", "Age", "Gender", "Mobile", "Email", "Workyear", "md5")
 	return lists
+}
+
+func (c *Candidate) GetCandidateByID() error {
+	o := orm.NewOrm()
+	err := o.QueryTable("candidate").Filter("Id", c.Id).One(c)
+	return err
+}
+
+func (c *Candidate) GetCandidateByMD5() error {
+	o := orm.NewOrm()
+	err := o.QueryTable("candidate").Filter("Md5", c.Md5).One(c)
+	return err
 }

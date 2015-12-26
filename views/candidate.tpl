@@ -1,6 +1,6 @@
 <script type="text/javascript" src="../static/js/func_candidate.js"></script>
 <script type="text/javascript" src="../static/js/control_candidate.js"></script>
-<div class="panel panel-primary" id="divbasic">
+<div class="panel panel-primary" id="div_candidate_basic">
 	<div class="panel-heading">基本信息</div>
 	<div class="panel-body">
 		<div class="container-fluid">
@@ -68,6 +68,28 @@
 			<button id="btn_new_save" name="btn_new_save" class="btn btn-default">保存</button>
 			
 		</div>
+	</div>
+</div>
+<div class="panel panel-primary" id="div_candidate_comment">
+	<div class="panel-heading">备注</div>
+	<div class="panel-body">
+		<div class="container-fluid">
+			<div class="form-group">
+				<textarea class="form-control" rows="3" id="textarea_candidate_comment"></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="panel-footer">
+		<div class="container-fluid">
+			<button id="btn_candidate_save_comment" name="btn_candidate_save" class="btn btn-default">保存</button>
+		</div>
+	</div>
+</div>
+<div class="panel panel-default" id="div_candidate_history">
+	<div class="panel-heading">记录</div>
+	<div class="panel-body">
+		<ul class="list-group" id="ul_candidate_comment_list">
+		</ul>
 	</div>
 </div>
 <footer>

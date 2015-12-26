@@ -8,6 +8,7 @@
       <tr>
         <th>Id</th>
         <th>名字</th>
+        <th>年龄</th>
         <th>性别</th>
         <th>电话</th>
         <th>邮箱</th>

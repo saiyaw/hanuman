@@ -1,6 +1,5 @@
 <script type="text/javascript" src="../static/js/func_new.js"></script>
 <script type="text/javascript" src="../static/js/control_new.js"></script>
-
 <div class="panel panel-primary" id="divbasic">
   <div class="panel-heading">基本信息</div>
   <div class="panel-body">
@@ -62,7 +61,7 @@
           </div>
         </div>
       </div>
-    </div>     
+    </div>
   </div>
   <div class="panel-footer">
     <div class="container-fluid">
@@ -70,5 +69,72 @@
     </div>
   </div>
 </div>
-<footer>
-</footer>
+<div class="panel panel-primary" id="divcomment">
+  <div class="panel-heading">备注</div>
+  <div class="panel-body">
+    <div class="container-fluid">
+      <div class="form-group">
+        <textarea class="form-control" rows="3" id="textarea_new_comment"></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="panel-footer">
+    <div class="container-fluid">
+      <button id="btn_new_save_comment" name="btn_new_save" class="btn btn-default">保存</button>
+    </div>
+  </div>
+</div>
+<div class="panel panel-default" id="divhistory">
+  <div class="panel-heading">记录</div>
+  <div class="panel-body">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <h4 class="list-group-item-heading">2015年7月6日 12:03:43</h4>
+        <p class="list-group-item-heading">
+          Cras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo
+        </p></li>
+        <li class="list-group-item">
+        <h4 class="list-group-item-heading">2015年7月6日 12:03:43</h4>
+        <p class="list-group-item-heading">
+          Cras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo
+        </p></li>
+        <li class="list-group-item">
+        <h4 class="list-group-item-heading">2015年7月6日 12:03:43</h4>
+        <p class="list-group-item-heading">
+          Cras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo
+        </p></li>
+        <li class="list-group-item">
+        <h4 class="list-group-item-heading">2015年7月6日 12:03:43</h4>
+        <p class="list-group-item-heading">
+          Cras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo
+        </p></li>
+        <li class="list-group-item">
+        <h4 class="list-group-item-heading">2015年7月6日 12:03:43</h4>
+        <p class="list-group-item-heading">
+          Cras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo
+        </p></li>
+        <li class="list-group-item">
+        <h4 class="list-group-item-heading">2015年7月6日 12:03:43</h4>
+        <p class="list-group-item-heading">
+          Cras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo
+        </p></li>
+        <li class="list-group-item">
+        <h4 class="list-group-item-heading">2015年7月6日 12:03:43</h4>
+        <p class="list-group-item-heading">
+          Cras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo
+        </p></li>
+        <li class="list-group-item">
+        <h4 class="list-group-item-heading">2015年7月6日 12:03:43</h4>
+        <p class="list-group-item-heading">
+          Cras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo
+        </p></li>
+        <li class="list-group-item">
+        <h4 class="list-group-item-heading">2015年7月6日 12:03:43</h4>
+        <p class="list-group-item-heading">
+          Cras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo odioCras justo
+        </p></li>
+      </ul>
+    </div>
+  </div>
+  <footer>
+  </footer>

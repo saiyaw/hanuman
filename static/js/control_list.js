@@ -18,6 +18,8 @@ $(function() {
         }, {
             data: 5
         }, {
+            data: 6
+        }, {
             "data": null,
             "defaultContent": "<button class='btn btn-link'>More</button>"
         }]
@@ -26,7 +28,7 @@ $(function() {
 
     $('#candidatelist tbody').on('click', 'button', function() {
         var pdata = candidatetable.row($(this).parents('tr')).data();
-        $.cookie("md5", pdata[7]);
+        $.cookie("id", pdata[0]);
         window.location.href = "/candidate";
 /*
         $.ajax({

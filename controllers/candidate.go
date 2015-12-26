@@ -42,3 +42,21 @@ func (c *CandidateController) GetCandidates() {
 	c.Data["json"] = &ps
 	c.ServeJson()
 }
+
+func (c *CandidateController) GetCandidateByMD5() {
+	md5 := c.GetString("md5")
+	var candidate models.Candidate
+	candidate.Md5 = md5
+	candidate.GetCandidateByMD5()
+	c.Data["json"] = &candidate
+	c.ServeJson()
+}
+
+func (c *CandidateController) GetCandidateByID() {
+
+	var candidate models.Candidate
+	candidate.Id, _ = c.GetInt64("id")
+	candidate.GetCandidateByID()
+	c.Data["json"] = &candidate
+	c.ServeJson()
+}

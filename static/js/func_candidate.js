@@ -1,0 +1,91 @@
+function add_comment_into_list(createtime, content) {
+	var component = '<li class="list-group-item"><h4 class="list-group-item-heading">' + createtime + '</h4><p class="list-group-item-heading">' + content + '</p></li>';
+	$("#ul_candidate_comment_list").append(component);
+
+}
+
+function get_candidate_info() {
+	var result = null;
+	var id = $.cookie("id");
+	$.ajax({
+		type: "POST",
+		async: false,
+		url: "/getcandidatebyid",
+		data: {
+			"id": id
+		},
+		success: function(output) {
+			result = output;
+		}
+	});
+
+	return result;
+}
+
+function get_comment_list() {
+	var result = null;
+	var id = $.cookie("id");
+	$.ajax({
+		type: "POST",
+		async: false,
+		url: "/getcommentlist",
+		data: {
+			"candidateid": id
+		},
+		success: function(output) {
+			result = output;
+		}
+	});
+
+	return result;
+
+}
+
+function fill_candidate_info(info) {
+	$('#iname').val(info.Fullname);
+	$('#iage').val(info.Age);
+	$('#sgender').val(info.Gender);
+	$('#iworkyear').val(info.Workyear);
+	$('#iemail').val(info.Email);
+	$('#imobile').val(info.Mobile);
+}
+
+function save_candidate_info() {
+	var result = null;
+	$.ajax({
+		type: "POST",
+		async: false,
+		url: "/insertcandidate",
+		data: {
+			"fullname": $("#iname").val(),
+			"age": $("#iage").val(),
+			"gender": $("#sgender").val(),
+			"mobile": $("#imobile").val(),
+			"email": $("#iemail").val(),
+			"workyear": $("#iworkyear").val(),
+		},
+		success: function(r) {
+			result = r;
+		}
+	});
+	return result;
+}
+
+function init_comment_list() {
+	var list = get_comment_list();
+	$.each(list, function(index, value) {
+		add_comment_into_list(ParseTimetoStr(value[3]), value[2]);
+	});
+}
+
+function init_candidate_page() {
+	// init basic information
+	var candidateinfo = get_candidate_info();
+	fill_candidate_info(candidateinfo);
+
+	//init comment
+	init_comment_list();
+
+
+
+}

@@ -14,9 +14,28 @@ function save_candidate_info(){
         },
         success: function(r) {
             result = r;
+            $.cookie("id") = result;
         }
     });
     return result;
+}
+
+function save_candidate_comment(){
+    var result = null;
+    $.ajax({
+        type: "POST",
+        async: false,
+        url: "/insertcomment",
+        data: {
+            "content": $("#textarea_new_comment").val(),
+            "candidateid": $.cookie("id")
+        },
+        success: function(r) {
+            result = r;
+        }
+    });
+    return result;
+
 }
 
 /*
