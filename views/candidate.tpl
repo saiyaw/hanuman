@@ -75,13 +75,13 @@
 	<div class="panel-body">
 		<div class="container-fluid">
 			<div class="form-group">
-				<textarea class="form-control" rows="3" id="textarea_candidate_comment"></textarea>
+				<textarea class="form-control" rows="3" id="textarea_candidate_comment" name="textarea_comment"></textarea>
 			</div>
 		</div>
 	</div>
 	<div class="panel-footer">
 		<div class="container-fluid">
-			<button id="btn_candidate_save_comment" name="btn_candidate_save" class="btn btn-default">保存</button>
+			<button id="btn_candidate_save_comment" name="btn_comment_save" class="btn btn-default">保存</button>
 		</div>
 	</div>
 </div>

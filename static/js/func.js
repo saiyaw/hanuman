@@ -37,3 +37,23 @@ function leadingZero(val) {
 
     return str;
 }
+
+
+function save_candidate_comment(){
+    var result = null;
+    $.ajax({
+        type: "POST",
+        async: false,
+        url: "/insertcomment",
+        data: {
+            "content": $("textarea[name=textarea_comment").val(),
+            "candidateid": $.cookie("id")
+        },
+        success: function(r) {
+            result = r;
+            location.reload();
+        }
+    });
+    return result;
+
+}

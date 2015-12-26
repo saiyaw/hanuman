@@ -37,7 +37,7 @@ func (c *Candidate) getMD5() {
 }
 
 func (c *Candidate) Insert() error {
-	//	c.getMD5()
+	c.getMD5()
 
 	o := orm.NewOrm()
 	o.Begin()

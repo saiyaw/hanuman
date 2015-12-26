@@ -13,7 +13,6 @@
 		<script type="text/javascript" src="../static/js/jquery.dataTables.min.js"></script>
 		<script type="text/javascript" src="../static/js/dataTables.bootstrap.min.js"></script>
 		<script type="text/javascript" src="../static/js/jquery.cookie.js"></script>
-		<script type="text/javascript" src="../static/js/date.js"></script>
 		<script type="text/javascript" src="../static/js/func.js"></script>
 		
 		
