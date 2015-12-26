@@ -39,8 +39,12 @@ function leadingZero(val) {
 }
 
 
-function save_candidate_comment(){
+function save_candidate_comment() {
     var result = null;
+    var comment = $("textarea[name=textarea_comment").val();
+    if (comment.length == 0) {
+        return result;
+    }
     $.ajax({
         type: "POST",
         async: false,

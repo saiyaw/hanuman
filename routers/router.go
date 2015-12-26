@@ -19,4 +19,7 @@ func init() {
 	beego.Router("/insertcomment", &controllers.CommentController{}, "POST:InsertOneComment")
 	beego.Router("/getcommentlist", &controllers.CommentController{}, "POST:GetComments")
 
+	beego.Router("/insertattachment", &controllers.AttachmentController{}, "POST:InsertOneAttachment")
+	beego.Router("/getattachments", &controllers.AttachmentController{}, "POST:GetAttachments")
+
 }

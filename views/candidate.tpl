@@ -93,6 +93,7 @@
 	</div>
 </div>
 <footer>
+<!--
 	<div class="panel panel-primary" id="divaback">
 		<div class="panel-heading"></div>
 		<div class="panel-body">
@@ -105,4 +106,6 @@
 		</div>
 		
 	</div>
+
+	-->
 </footer>
