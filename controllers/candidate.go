@@ -30,6 +30,10 @@ func (c *CandidateController) InsertOneCandidate() {
 
 	candidate.Workyear = c.GetString("workyear")
 
+	candidate.Post = c.GetString("post")
+
+	candidate.City = c.GetString("city")
+
 	candidate.Insert()
 	c.Ctx.WriteString(strconv.FormatInt(candidate.Id, 10))
 

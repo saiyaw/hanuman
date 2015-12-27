@@ -18,6 +18,8 @@ type Candidate struct {
 	Mobile   string
 	Email    string
 	Workyear string
+	City     string
+	Post     string
 	Md5      string    `orm:"unique"`
 	Created  time.Time `orm:"auto_now_add;type(datetime)"`
 	Updated  time.Time `orm:"auto_now;type(datetime)"`
@@ -30,7 +32,7 @@ func (c Candidate) Get() error {
 }
 
 func (c *Candidate) getMD5() {
-	s := c.Fullname + c.Age + c.Gender + c.Mobile + c.Email + c.Workyear
+	s := c.Fullname + c.Age + c.Gender + c.Mobile + c.Email + c.Workyear + c.Post + c.City
 	hasher := md5.New()
 	hasher.Write([]byte(s))
 	c.Md5 = hex.EncodeToString(hasher.Sum(nil))
@@ -57,7 +59,7 @@ func (c *Candidate) Insert() error {
 func (c Candidate) GetCandidates() []orm.ParamsList {
 	o := orm.NewOrm()
 	lists := []orm.ParamsList{}
-	o.QueryTable("candidate").ValuesList(&lists, "Id", "Fullname", "Age", "Gender", "Mobile", "Email", "Workyear", "md5")
+	o.QueryTable("candidate").ValuesList(&lists, "Id", "Fullname", "Age", "Gender", "Mobile", "Email", "Workyear", "City", "Post", "md5")
 	return lists
 }
 
