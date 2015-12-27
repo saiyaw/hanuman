@@ -59,13 +59,5 @@
     </div>
   </div>
 </div>
-<div class="panel panel-info" id="div_new_attachment">
-  <div class="panel-heading">附件</div>
-  <div class="panel-body">
-    <div class="container-fluid">
-      <input type="file" id="iattachment" class="file form-control" data-preview-file-type="text" >
-    </div>
-  </div>
-</div>
 <footer>
 </footer>

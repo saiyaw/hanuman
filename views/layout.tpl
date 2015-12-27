@@ -12,8 +12,8 @@
 		<script type="text/javascript" src="../static/js/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript" src="../static/js/plugins/canvas-to-blob.min.js"></script>
 		<script type="text/javascript" src="../static/js/fileinput.min.js"></script>
-		<script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="../static/js/fileinput_locale_zh.js"></script>
+		<script type="text/javascript" src="../static/js/bootstrap.min.js"></script>		
 		<script type="text/javascript" src="../static/js/highcharts-custom.js"></script>
 		<script type="text/javascript" src="../static/js/jquery.dataTables.min.js"></script>
 		<script type="text/javascript" src="../static/js/dataTables.bootstrap.min.js"></script>

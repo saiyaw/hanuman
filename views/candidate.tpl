@@ -62,8 +62,12 @@
 <div class="panel panel-info" id="div_new_attachment">
 	<div class="panel-heading">附件</div>
 	<div class="panel-body">
+		<ul class="list-group" id="ul_candidate_attachment_list">
+		</ul>
+	</div>
+	<div class="panel-footer">
 		<div class="container-fluid">
-			<input type="file" id="iattachment" class="file form-control" data-preview-file-type="text" >
+			<input type="file" id="iattachment" name="attachment_upload" multiple class="file-loading">
 		</div>
 	</div>
 </div>
@@ -92,16 +96,16 @@
 <footer>
 	<!--
 		<div class="panel panel-primary" id="divaback">
-				<div class="panel-heading"></div>
-				<div class="panel-body">
-				</div>
-				<div class="panel-footer">
-						<div class="container-fluid">
-								
-								<button id="btn_candidate_back"  class="btn btn-default">后退</button>
+						<div class="panel-heading"></div>
+						<div class="panel-body">
 						</div>
-				</div>
-				
+						<div class="panel-footer">
+										<div class="container-fluid">
+														
+														<button id="btn_candidate_back"  class="btn btn-default">后退</button>
+										</div>
+						</div>
+						
 		</div>
 	-->
 </footer>

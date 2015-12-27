@@ -4,6 +4,12 @@ function add_comment_into_list(createtime, content) {
 
 }
 
+function add_attachment_into_list(filename) {
+	var component = '<li class="list-group-item"><a class="list-group-item" href="/static/file/' + filename +  '">' + filename + '</a></li>';
+	$("#ul_candidate_attachment_list").append(component);
+
+}
+
 function get_candidate_info() {
 	var result = null;
 	var id = $.cookie("id");
@@ -29,6 +35,25 @@ function get_comment_list() {
 		type: "POST",
 		async: false,
 		url: "/getcommentlist",
+		data: {
+			"candidateid": id
+		},
+		success: function(output) {
+			result = output;
+		}
+	});
+
+	return result;
+
+}
+
+function get_attachment_list() {
+	var result = null;
+	var id = $.cookie("id");
+	$.ajax({
+		type: "POST",
+		async: false,
+		url: "/getattachments",
 		data: {
 			"candidateid": id
 		},
@@ -78,13 +103,24 @@ function init_comment_list() {
 	});
 }
 
+function init_attachment_list() {
+	var list = get_attachment_list();
+	$.each(list, function(index, value) {
+		add_attachment_into_list(value[2]);
+	});
+}
+
+
 function init_candidate_page() {
 	// init basic information
 	var candidateinfo = get_candidate_info();
 	fill_candidate_info(candidateinfo);
 
-	//init comment
+	// init comment
 	init_comment_list();
+
+	// init attachment
+	init_attachment_list();
 
 
 

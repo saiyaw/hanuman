@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"os"
 	"strconv"
 
 	"github.com/astaxie/beego"
@@ -12,8 +13,19 @@ type AttachmentController struct {
 }
 
 func (c *AttachmentController) InsertOneAttachment() {
+
+	workpath, _ := os.Getwd()
+	beego.Debug(workpath)
+	f, h, err := c.GetFile("attachment_upload")
+	f.Close()
+	if err != nil {
+		beego.Error(err)
+	} else {
+		c.SaveToFile("attachment_upload", workpath+"/static/file/"+h.Filename)
+	}
+
 	var attachment models.Attachment
-	attachment.Filepath = c.GetString("filepath")
+	attachment.Filepath = h.Filename
 	attachment.Candidateid, _ = c.GetInt64("candidateid")
 	attachment.Insert()
 	c.Ctx.WriteString(strconv.FormatInt(attachment.Id, 10))
