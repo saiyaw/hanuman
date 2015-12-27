@@ -51,17 +51,7 @@
         </div>
       </div>
     </div>
-    <div class="clearfix" style="margin-bottom: 10px;"></div>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-xs-6">
-          <div class="input-group">
-            <span class="input-group-addon" id="basic-addon-height">附件:</span>
-            <input type="text" id="iattachment" class="form-control" placeholder="Height(cm)" aria-describedby="basic-addon-height">
-          </div>
-        </div>
-      </div>
-    </div>
+    
   </div>
   <div class="panel-footer">
     <div class="container-fluid">
@@ -69,6 +59,13 @@
     </div>
   </div>
 </div>
-
+<div class="panel panel-info" id="div_new_attachment">
+  <div class="panel-heading">附件</div>
+  <div class="panel-body">
+    <div class="container-fluid">
+      <input type="file" id="iattachment" class="file form-control" data-preview-file-type="text" >
+    </div>
+  </div>
+</div>
 <footer>
 </footer>

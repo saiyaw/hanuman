@@ -51,22 +51,19 @@
 				</div>
 			</div>
 		</div>
-		<div class="clearfix" style="margin-bottom: 10px;"></div>
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-xs-6">
-					<div class="input-group">
-						<span class="input-group-addon" id="basic-addon-height">附件:</span>
-						<input type="text" id="iattachment" class="form-control" placeholder="Height(cm)" aria-describedby="basic-addon-height">
-					</div>
-				</div>
-			</div>
-		</div>
 	</div>
 	<div class="panel-footer">
 		<div class="container-fluid">
 			<button id="btn_new_save" name="btn_new_save" class="btn btn-default">保存</button>
 			
+		</div>
+	</div>
+</div>
+<div class="panel panel-info" id="div_new_attachment">
+	<div class="panel-heading">附件</div>
+	<div class="panel-body">
+		<div class="container-fluid">
+			<input type="file" id="iattachment" class="file form-control" data-preview-file-type="text" >
 		</div>
 	</div>
 </div>
@@ -93,19 +90,18 @@
 	</div>
 </div>
 <footer>
-<!--
-	<div class="panel panel-primary" id="divaback">
-		<div class="panel-heading"></div>
-		<div class="panel-body">
-		</div>
-		<div class="panel-footer">
-			<div class="container-fluid">
+	<!--
+		<div class="panel panel-primary" id="divaback">
+				<div class="panel-heading"></div>
+				<div class="panel-body">
+				</div>
+				<div class="panel-footer">
+						<div class="container-fluid">
+								
+								<button id="btn_candidate_back"  class="btn btn-default">后退</button>
+						</div>
+				</div>
 				
-				<button id="btn_candidate_back"  class="btn btn-default">后退</button>
-			</div>
 		</div>
-		
-	</div>
-
 	-->
 </footer>
