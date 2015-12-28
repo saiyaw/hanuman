@@ -14,6 +14,7 @@ func init() {
 
 	beego.Router("/getcandidatelist", &controllers.CandidateController{}, "GET:GetCandidates")
 	beego.Router("/insertcandidate", &controllers.CandidateController{}, "POST:InsertOneCandidate")
+	beego.Router("/updatecandidate", &controllers.CandidateController{}, "POST:UpdateCandidate")
 	beego.Router("/getcandidatebyid", &controllers.CandidateController{}, "POST:GetCandidateByID")
 
 	beego.Router("/insertcomment", &controllers.CommentController{}, "POST:InsertOneComment")
@@ -21,5 +22,9 @@ func init() {
 
 	beego.Router("/insertattachment", &controllers.AttachmentController{}, "POST:InsertOneAttachment")
 	beego.Router("/getattachments", &controllers.AttachmentController{}, "POST:GetAttachments")
+
+	beego.Router("/insertpost", &controllers.PostController{}, "POST:InsertOnePost")
+	beego.Router("/getpost", &controllers.PostController{}, "POST:GetPost")
+	beego.Router("/getpostlist", &controllers.PostController{}, "GET:GetPostList")
 
 }

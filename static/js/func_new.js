@@ -1,4 +1,4 @@
-function save_candidate_info(){
+function save_candidate_info() {
     var result = null;
     $.ajax({
         type: "POST",
@@ -10,6 +10,8 @@ function save_candidate_info(){
             "gender": $("#sgender").val(),
             "mobile": $("#imobile").val(),
             "email": $("#iemail").val(),
+            "position": $("#iposition").val(),
+            "city": $("#icity").val(),
             "workyear": $("#iworkyear").val(),
         },
         success: function(r) {

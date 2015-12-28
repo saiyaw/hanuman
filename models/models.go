@@ -12,7 +12,7 @@ func init() {
 	connstr := "user=hanuman password=123456 dbname=hanuman sslmode=disable"
 	orm.RegisterDataBase("default", "postgres", connstr)
 
-	orm.RegisterModel(new(Candidate), new(Comment), new(Attachment))
+	orm.RegisterModel(new(Candidate), new(Comment), new(Attachment), new(Post))
 
 	createTables()
 }

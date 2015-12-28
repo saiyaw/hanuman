@@ -56,6 +56,21 @@ func (c *Candidate) Insert() error {
 	return nil
 }
 
+func (c *Candidate) Update() error {
+	c.Updated = time.Now()
+	c.getMD5()
+	o := orm.NewOrm()
+	o.Begin()
+	_, err := o.Update(c, "Fullname", "Age", "Gender", "Mobile", "Email", "Workyear", "City", "Post", "Md5", "Updated")
+	if err != nil {
+		log.Println(err.Error())
+		o.Rollback()
+		return err
+	}
+	o.Commit()
+	return err
+}
+
 func (c Candidate) GetCandidates() []orm.ParamsList {
 	o := orm.NewOrm()
 	lists := []orm.ParamsList{}

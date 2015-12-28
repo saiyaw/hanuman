@@ -13,7 +13,7 @@ $(function() {
 		uploadExtraData: {
 			"candidateid": $.cookie("id")
 		}
-	}).on('fileuploaded', function(event, data, previewId, index){
+	}).on('fileuploaded', function(event, data, previewId, index) {
 		location.reload();
 	});
 
@@ -26,6 +26,7 @@ $(function() {
 		save_candidate_comment();
 	});
 
-
-
+	$("#btn_candidate_save").click(function() {
+		update_candidate_info();
+	});
 });

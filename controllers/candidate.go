@@ -39,6 +39,36 @@ func (c *CandidateController) InsertOneCandidate() {
 
 }
 
+func (c *CandidateController) UpdateCandidate() {
+	var candidate models.Candidate
+
+	candidate.Id, _ = c.GetInt64("id")
+
+	candidate.Fullname = c.GetString("fullname")
+
+	candidate.Age = c.GetString("age")
+
+	candidate.Gender = c.GetString("gender")
+
+	candidate.Mobile = c.GetString("mobile")
+
+	candidate.Email = c.GetString("email")
+
+	candidate.Workyear = c.GetString("workyear")
+
+	candidate.Post = c.GetString("post")
+
+	candidate.City = c.GetString("city")
+
+	err := candidate.Update()
+	if err != nil {
+		c.Ctx.WriteString(err.Error())
+	} else {
+		c.Ctx.WriteString("ok")
+	}
+
+}
+
 func (c *CandidateController) GetCandidates() {
 
 	var candidate models.Candidate

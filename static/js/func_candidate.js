@@ -5,7 +5,7 @@ function add_comment_into_list(createtime, content) {
 }
 
 function add_attachment_into_list(filename) {
-	var component = '<li class="list-group-item"><a class="list-group-item" href="/static/file/' + filename +  '">' + filename + '</a></li>';
+	var component = '<li class="list-group-item"><a class="list-group-item" href="/static/file/' + filename + '">' + filename + '</a></li>';
 	$("#ul_candidate_attachment_list").append(component);
 
 }
@@ -73,20 +73,26 @@ function fill_candidate_info(info) {
 	$('#iworkyear').val(info.Workyear);
 	$('#iemail').val(info.Email);
 	$('#imobile').val(info.Mobile);
+	$('#icity').val(info.City);
+	$('#ipost').val(info.Post);
+
 }
 
-function save_candidate_info() {
+function update_candidate_info() {
 	var result = null;
 	$.ajax({
 		type: "POST",
 		async: false,
-		url: "/insertcandidate",
+		url: "/updatecandidate",
 		data: {
+			"id": $.cookie("id"),
 			"fullname": $("#iname").val(),
 			"age": $("#iage").val(),
 			"gender": $("#sgender").val(),
 			"mobile": $("#imobile").val(),
 			"email": $("#iemail").val(),
+			"city": $("#icity").val(),
+			"post": $("#ipost").val(),
 			"workyear": $("#iworkyear").val(),
 		},
 		success: function(r) {

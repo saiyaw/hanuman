@@ -37,16 +37,28 @@
     <div class="clearfix" style="margin-bottom: 10px;"></div>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-xs-6">
+        <div class="col-xs-3">
           <div class="input-group">
             <span class="input-group-addon" id="basic-addon-email">邮箱:</span>
             <input type="email" id="iemail" class="form-control" placeholder="邮箱" aria-describedby="basic-addon-email">
           </div>
         </div>
-        <div class="col-xs-6">
+        <div class="col-xs-3">
           <div class="input-group">
             <span class="input-group-addon" id="basic-addon-mobile">电话:</span>
             <input type="text" id="imobile" class="form-control" placeholder="电话" aria-describedby="basic-addon-mobile">
+          </div>
+        </div>
+        <div class="col-xs-3">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon-post">职位:</span>
+            <input type="text" id="ipost" class="form-control" placeholder="职位" aria-describedby="basic-addon-post">
+          </div>
+        </div>
+        <div class="col-xs-3">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon-city">城市:</span>
+            <input type="text" id="icity" class="form-control" placeholder="城市" aria-describedby="basic-addon-city">
           </div>
         </div>
       </div>
