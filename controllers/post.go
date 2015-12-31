@@ -13,7 +13,7 @@ type PostController struct {
 
 func (c *PostController) InsertOnePost() {
 	var post models.Post
-	post.Position = c.GetString("post")
+	post.Title = c.GetString("post")
 	post.Insert()
 	c.Ctx.WriteString(strconv.FormatInt(post.Id, 10))
 
@@ -21,7 +21,7 @@ func (c *PostController) InsertOnePost() {
 
 func (c *PostController) GetPost() {
 	var post models.Post
-	post.Position = c.GetString("post")
+	post.Title = c.GetString("post")
 	post.Get()
 	c.Data["json"] = &post
 	c.ServeJson()

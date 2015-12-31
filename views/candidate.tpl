@@ -1,5 +1,5 @@
-<script type="text/javascript" src="../static/js/func_candidate.js"></script>
-<script type="text/javascript" src="../static/js/control_candidate.js"></script>
+<script type="text/javascript" src="../static/js/cust/func_candidate.js"></script>
+<script type="text/javascript" src="../static/js/cust/control_candidate.js"></script>
 <div class="panel panel-primary" id="div_candidate_basic">
 	<div class="panel-heading">基本信息</div>
 	<div class="panel-body">

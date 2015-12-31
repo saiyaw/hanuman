@@ -1,4 +1,4 @@
-<script type="text/javascript" src="../static/js/control_view.js"></script>
+<script type="text/javascript" src="../static/js/cust/control_view.js"></script>
 
 <div class="container-fluid">
 	<table id="patient" class="table table-striped table-bordered"  cellspacing="0" width="100%">

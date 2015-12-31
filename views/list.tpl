@@ -1,5 +1,5 @@
-<script type="text/javascript" src="../static/js/func_list.js"></script>
-<script type="text/javascript" src="../static/js/control_list.js"></script>
+<script type="text/javascript" src="../static/js/cust/func_list.js"></script>
+<script type="text/javascript" src="../static/js/cust/control_list.js"></script>
 
 
 <div class="container-fluid">

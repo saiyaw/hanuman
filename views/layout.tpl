@@ -20,7 +20,8 @@
 		<script type="text/javascript" src="../static/js/dataTables.bootstrap.min.js"></script>
 		<script type="text/javascript" src="../static/js/jquery.cookie.js"></script>
 		<script type="text/javascript" src="../static/js/select2.full.min.js"></script>
-		<script type="text/javascript" src="../static/js/func.js"></script>
+		
+		<script type="text/javascript" src="../static/js/cust/func.js"></script>
 		
 		
 	</head>
