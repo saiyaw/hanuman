@@ -63,13 +63,26 @@
         </div>
       </div>
     </div>
-    
-  </div>
-  <div class="panel-footer">
+    <div class="clearfix" style="margin-bottom: 10px;"></div>
     <div class="container-fluid">
-      <button id="btn_new_save" name="btn_new_save" class="btn btn-default">保存</button>
+      <div class="row">
+        <div class="col-xs-9">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon-label">标签:</span>
+          <select id="ilabel" name="select_label" class="form-control" multiple=""></select>
+          <span class="input-group-btn">
+            <button id="btn_new_add_label" name="btn_add_label" class="btn btn-default">增加</button>
+          </span>
+        </div>
+      </div>
     </div>
   </div>
+</div>
+<div class="panel-footer">
+  <div class="container-fluid">
+    <button id="btn_new_save" name="btn_new_save" class="btn btn-default">保存</button>
+  </div>
+</div>
 </div>
 <footer>
 </footer>

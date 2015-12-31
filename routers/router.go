@@ -27,4 +27,8 @@ func init() {
 	beego.Router("/getpost", &controllers.PostController{}, "POST:GetPost")
 	beego.Router("/getpostlist", &controllers.PostController{}, "GET:GetPostList")
 
+	beego.Router("/insertkeyword", &controllers.KeywordController{}, "POST:InsertOneKeyword")
+	beego.Router("/getkeyword", &controllers.KeywordController{}, "POST:Getkeyword")
+	beego.Router("/getkeywordlist", &controllers.KeywordController{}, "GET:GetKeywordList")
+
 }

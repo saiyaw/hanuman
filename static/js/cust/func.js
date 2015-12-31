@@ -59,5 +59,52 @@ function save_candidate_comment() {
         }
     });
     return result;
+}
 
+function add_new_keyword() {
+    var result = null;
+    var label = $("select[name=select_label").val();
+    if (label == null){
+        return result;
+    }
+    if (label.length == 0) {
+        return result;
+    }
+    var last = label[label.length - 1];
+    if (last.length == 0) {
+        return result;
+    }
+
+    $.ajax({
+        type: "POST",
+        async: false,
+        url: "/insertkeyword",
+        data: {
+            "label": last
+        },
+        success: function(r) {
+            result = r;
+            location.reload();
+        }
+    });
+    return result;
+}
+
+function get_keyword_list() {
+    var result = [];
+    $.ajax({
+        type: "GET",
+        async: false,
+        url: "/getkeywordlist",
+        success: function(r) {
+            $.each(r, function(index, value){
+                var item = {
+                    id:value[0],
+                    text:value[1]
+                };
+                result.push(item);
+            });
+        }
+    });
+    return result;
 }
