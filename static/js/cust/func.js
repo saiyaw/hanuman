@@ -64,13 +64,18 @@ function save_candidate_comment() {
 function add_new_keyword() {
     var result = null;
     var label = $("select[name=select_label").val();
-    if (label == null){
+    if (label == null) {
         return result;
     }
     if (label.length == 0) {
         return result;
     }
-    var last = label[label.length - 1];
+    var last = "";
+    if (typeof(label) == "string") {
+        last = label;
+    } else {
+        last = label[label.length - 1];
+    }
     if (last.length == 0) {
         return result;
     }
@@ -97,10 +102,10 @@ function get_keyword_list() {
         async: false,
         url: "/getkeywordlist",
         success: function(r) {
-            $.each(r, function(index, value){
+            $.each(r, function(index, value) {
                 var item = {
-                    id:value[0],
-                    text:value[1]
+                    id: value[0],
+                    text: value[1]
                 };
                 result.push(item);
             });

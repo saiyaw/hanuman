@@ -31,6 +31,18 @@ func (k *Keyword) Insert() error {
 	return nil
 }
 
+func (k Keyword) Delete() error {
+	o := orm.NewOrm()
+	o.Begin()
+	_, err := o.Delete(&k)
+	if err != nil {
+		o.Rollback()
+		return err
+	}
+	o.Commit()
+	return nil
+}
+
 func (k Keyword) Get() error {
 	o := orm.NewOrm()
 	err := o.Read(k)

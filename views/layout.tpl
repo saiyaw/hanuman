@@ -38,6 +38,7 @@
 					<ul class="nav navbar-nav">
 						<li><a href="/list">列表</a></li>
 						<li><a href="/new">新建</a></li>
+						<li><a href="/admin">管理</a></li>
 						<!--
 						<li><a href="/view">查看</a></li>
 						<li><a href="/report">报告</a></li>

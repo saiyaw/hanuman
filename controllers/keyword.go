@@ -16,6 +16,17 @@ func (c *KeywordController) InsertOneKeyword() {
 	keyword.Content = c.GetString("label")
 	keyword.Insert()
 	c.Ctx.WriteString(strconv.FormatInt(keyword.Id, 10))
+}
+
+func (c *KeywordController) DeleteOneKeyword() {
+	var keyword models.Keyword
+	keyword.Id, _ = c.GetInt64("id")
+	err := keyword.Delete()
+	if err != nil {
+		c.Ctx.WriteString(err.Error())
+	} else {
+		c.Ctx.WriteString("ok")
+	}
 
 }
 

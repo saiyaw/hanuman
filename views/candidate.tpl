@@ -63,61 +63,69 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="panel-footer">
+		<div class="clearfix" style="margin-bottom: 10px;"></div>
 		<div class="container-fluid">
-			<button id="btn_candidate_save" name="btn_new_save" class="btn btn-default">保存</button>
-			
-		</div>
-	</div>
-</div>
-<div class="panel panel-info" id="div_new_attachment">
-	<div class="panel-heading">附件</div>
-	<div class="panel-body">
-		<ul class="list-group" id="ul_candidate_attachment_list">
-		</ul>
-	</div>
-	<div class="panel-footer">
-		<div class="container-fluid">
-			<input type="file" id="iattachment" name="attachment_upload" multiple class="file-loading">
-		</div>
-	</div>
-</div>
-<div class="panel panel-primary" id="div_candidate_comment">
-	<div class="panel-heading">备注</div>
-	<div class="panel-body">
-		<div class="container-fluid">
-			<div class="form-group">
-				<textarea class="form-control" rows="3" id="textarea_candidate_comment" name="textarea_comment"></textarea>
+			<div class="row">
+				<div class="col-xs-3">
+					<div class="input-group">
+						<span class="input-group-addon" id="basic-addon-company">公司:</span>
+						<input type="text" id="icompany" class="form-control" placeholder="公司" aria-describedby="basic-addon-company">
+					</div>
+				</div>
+				<div class="col-xs-9">
+					<div class="input-group">
+						<span class="input-group-addon" id="basic-addon-label">标签:</span>
+					<select id="select_candidate_label" name="select_label" class="form-control" multiple></select>
+					<!--
+					<span class="input-group-btn">
+							<button id="btn_new_add_label" name="btn_add_label" class="btn btn-default">增加</button>
+					</span>
+					-->
+				</div>
 			</div>
 		</div>
 	</div>
-	<div class="panel-footer">
-		<div class="container-fluid">
-			<button id="btn_candidate_save_comment" name="btn_comment_save" class="btn btn-default">保存</button>
+</div>
+<div class="panel-footer">
+	<div class="container-fluid">
+		<button id="btn_candidate_save" name="btn_new_save" class="btn btn-default">保存</button>
+		
+	</div>
+</div>
+</div>
+<div class="panel panel-info" id="div_new_attachment">
+<div class="panel-heading">附件</div>
+<div class="panel-body">
+	<ul class="list-group" id="ul_candidate_attachment_list">
+	</ul>
+</div>
+<div class="panel-footer">
+	<div class="container-fluid">
+		<input type="file" id="iattachment" name="attachment_upload" multiple class="file-loading">
+	</div>
+</div>
+</div>
+<div class="panel panel-primary" id="div_candidate_comment">
+<div class="panel-heading">备注</div>
+<div class="panel-body">
+	<div class="container-fluid">
+		<div class="form-group">
+			<textarea class="form-control" rows="3" id="textarea_candidate_comment" name="textarea_comment"></textarea>
 		</div>
 	</div>
+</div>
+<div class="panel-footer">
+	<div class="container-fluid">
+		<button id="btn_candidate_save_comment" name="btn_comment_save" class="btn btn-default">保存</button>
+	</div>
+</div>
 </div>
 <div class="panel panel-default" id="div_candidate_history">
-	<div class="panel-heading">记录</div>
-	<div class="panel-body">
-		<ul class="list-group" id="ul_candidate_comment_list">
-		</ul>
-	</div>
+<div class="panel-heading">记录</div>
+<div class="panel-body">
+	<ul class="list-group" id="ul_candidate_comment_list">
+	</ul>
+</div>
 </div>
 <footer>
-	<!--
-		<div class="panel panel-primary" id="divaback">
-							<div class="panel-heading"></div>
-							<div class="panel-body">
-							</div>
-							<div class="panel-footer">
-												<div class="container-fluid">
-																	
-																	<button id="btn_candidate_back"  class="btn btn-default">后退</button>
-												</div>
-							</div>
-							
-		</div>
-	-->
 </footer>

@@ -10,6 +10,7 @@ func init() {
 	beego.Router("/list", &controllers.ListController{})
 	beego.Router("/new", &controllers.NewController{})
 	beego.Router("/view", &controllers.ViewController{})
+	beego.Router("/admin", &controllers.AdminController{})
 	beego.Router("/candidate", &controllers.CandidateController{})
 
 	beego.Router("/getcandidatelist", &controllers.CandidateController{}, "GET:GetCandidates")
@@ -30,5 +31,6 @@ func init() {
 	beego.Router("/insertkeyword", &controllers.KeywordController{}, "POST:InsertOneKeyword")
 	beego.Router("/getkeyword", &controllers.KeywordController{}, "POST:Getkeyword")
 	beego.Router("/getkeywordlist", &controllers.KeywordController{}, "GET:GetKeywordList")
+	beego.Router("/deletekeyword", &controllers.KeywordController{}, "POST:DeleteOneKeyword")
 
 }

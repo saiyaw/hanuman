@@ -1,5 +1,7 @@
 $(function() {
 
+	
+
 	init_candidate_page();
 
 	$("#iattachment").fileinput({

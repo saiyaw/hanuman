@@ -20,6 +20,12 @@ $(function() {
         }, {
             data: 6
         }, {
+            data: 7
+        },{
+            data: 8
+        },{
+            data: 9
+        },{
             "data": null,
             "defaultContent": "<button class='btn btn-link'>More</button>"
         }]

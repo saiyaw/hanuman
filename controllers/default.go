@@ -37,3 +37,12 @@ func (c *ViewController) Get() {
 	c.TplNames = "view.tpl"
 	c.Layout = "layout.tpl"
 }
+
+type AdminController struct {
+	beego.Controller
+}
+
+func (c *AdminController) Get() {
+	c.TplNames = "admin.tpl"
+	c.Layout = "layout.tpl"
+}

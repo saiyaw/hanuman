@@ -66,13 +66,21 @@
     <div class="clearfix" style="margin-bottom: 10px;"></div>
     <div class="container-fluid">
       <div class="row">
+        <div class="col-xs-3">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon-company">公司:</span>
+            <input type="text" id="icompany" class="form-control" placeholder="公司" aria-describedby="basic-addon-company">
+          </div>
+        </div>
         <div class="col-xs-9">
           <div class="input-group">
             <span class="input-group-addon" id="basic-addon-label">标签:</span>
-          <select id="ilabel" name="select_label" class="form-control" multiple=""></select>
+          <select id="ilabel" name="select_label" class="form-control" multiple></select>
+          <!--
           <span class="input-group-btn">
             <button id="btn_new_add_label" name="btn_add_label" class="btn btn-default">增加</button>
           </span>
+          -->
         </div>
       </div>
     </div>

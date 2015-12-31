@@ -128,6 +128,13 @@ function init_candidate_page() {
 	// init attachment
 	init_attachment_list();
 
+	$("#select_candidate_label").select2({
+		theme: "bootstrap",
+		language: "zh-CN",
+		tags: "true",
+		data: get_keyword_list()
+	});
+
 
 
 }
