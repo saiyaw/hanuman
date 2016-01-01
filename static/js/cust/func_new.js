@@ -13,6 +13,7 @@ function save_candidate_info() {
             "post": $("#ipost").val(),
             "city": $("#icity").val(),
             "workyear": $("#iworkyear").val(),
+            "company" : $("#icompany").val(),
         },
         success: function(r) {
             result = r;

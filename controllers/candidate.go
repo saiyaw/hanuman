@@ -34,6 +34,8 @@ func (c *CandidateController) InsertOneCandidate() {
 
 	candidate.City = c.GetString("city")
 
+	candidate.Company = c.GetString("company")
+
 	candidate.Insert()
 	c.Ctx.WriteString(strconv.FormatInt(candidate.Id, 10))
 
@@ -59,6 +61,8 @@ func (c *CandidateController) UpdateCandidate() {
 	candidate.Post = c.GetString("post")
 
 	candidate.City = c.GetString("city")
+
+	candidate.Company = c.GetString("company")
 
 	err := candidate.Update()
 	if err != nil {

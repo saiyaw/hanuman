@@ -75,6 +75,7 @@ function fill_candidate_info(info) {
 	$('#imobile').val(info.Mobile);
 	$('#icity').val(info.City);
 	$('#ipost').val(info.Post);
+	$('#icompany').val(info.Company);
 
 }
 
@@ -94,6 +95,7 @@ function update_candidate_info() {
 			"city": $("#icity").val(),
 			"post": $("#ipost").val(),
 			"workyear": $("#iworkyear").val(),
+			"company" : $("#icompany").val(),
 		},
 		success: function(r) {
 			result = r;
