@@ -21,16 +21,18 @@ $(function() {
             data: 6
         }, {
             data: 7
-        },{
+        }, {
             data: 8
-        },{
+        }, {
             data: 9
-        },{
+        }, {
             "data": null,
             "defaultContent": "<button class='btn btn-link'>More</button>"
         }]
 
     });
+    // hide the column :id
+    candidatetable.column(0).visible(false);
 
     $('#candidatelist tbody').on('click', 'button', function() {
         var pdata = candidatetable.row($(this).parents('tr')).data();
