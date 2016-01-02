@@ -75,7 +75,7 @@
         <div class="col-xs-9">
           <div class="input-group">
             <span class="input-group-addon" id="basic-addon-label">标签:</span>
-          <select id="ilabel" name="select_label" class="form-control" multiple></select>
+          <select id="select_new_label" name="select_label" class="form-control" multiple></select>
           <!--
           <span class="input-group-btn">
             <button id="btn_new_add_label" name="btn_add_label" class="btn btn-default">增加</button>

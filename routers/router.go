@@ -25,12 +25,15 @@ func init() {
 	beego.Router("/getattachments", &controllers.AttachmentController{}, "POST:GetAttachments")
 
 	beego.Router("/insertpost", &controllers.PostController{}, "POST:InsertOnePost")
-	beego.Router("/getpost", &controllers.PostController{}, "POST:GetPost")
 	beego.Router("/getpostlist", &controllers.PostController{}, "GET:GetPostList")
 
-	beego.Router("/insertkeyword", &controllers.KeywordController{}, "POST:InsertOneKeyword")
-	beego.Router("/getkeyword", &controllers.KeywordController{}, "POST:Getkeyword")
-	beego.Router("/getkeywordlist", &controllers.KeywordController{}, "GET:GetKeywordList")
-	beego.Router("/deletekeyword", &controllers.KeywordController{}, "POST:DeleteOneKeyword")
+	beego.Router("/insertlabel", &controllers.LabelController{}, "POST:InsertOneLabel")
+	beego.Router("/getlabellist", &controllers.LabelController{}, "GET:GetLabelList")
+	beego.Router("/getlabel", &controllers.LabelController{}, "GET:GetLabel")
+	beego.Router("/deletelabel", &controllers.LabelController{}, "POST:DeleteOneLabel")
+
+	beego.Router("/insertcandidatelabel", &controllers.CandidateLabelController{}, "POST:InsertCandidateLabel")
+	beego.Router("/getcandidatelabellist", &controllers.CandidateLabelController{}, "POST:GetCandidateLabelList")
+	beego.Router("/deletecandidatelabel", &controllers.CandidateLabelController{}, "POST:DeleteCandidateLabel")
 
 }

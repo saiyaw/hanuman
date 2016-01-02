@@ -38,7 +38,6 @@ func (c *CandidateController) InsertOneCandidate() {
 
 	candidate.Insert()
 	c.Ctx.WriteString(strconv.FormatInt(candidate.Id, 10))
-
 }
 
 func (c *CandidateController) UpdateCandidate() {

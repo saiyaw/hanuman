@@ -31,12 +31,6 @@ func (p *Post) Insert() error {
 	return nil
 }
 
-func (p Post) Get() error {
-	o := orm.NewOrm()
-	err := o.Read(p)
-	return err
-}
-
 func (p Post) GetPostList() []orm.ParamsList {
 	o := orm.NewOrm()
 	lists := []orm.ParamsList{}

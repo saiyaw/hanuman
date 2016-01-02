@@ -26,12 +26,6 @@ type Candidate struct {
 	Updated  time.Time `orm:"auto_now;type(datetime)"`
 }
 
-func (c Candidate) Get() error {
-	o := orm.NewOrm()
-	err := o.Read(c)
-	return err
-}
-
 func (c *Candidate) getMD5() {
 	s := c.Fullname + c.Age + c.Gender + c.Mobile + c.Email + c.Workyear + c.Post + c.City + c.Company
 	hasher := md5.New()

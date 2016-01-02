@@ -4,18 +4,16 @@ $(function() {
 		theme: "bootstrap",
 		language: "zh-CN",
 		tags: "true",
-		//		tokenSeparators: [','],
-		data: get_keyword_list()
+		tokenSeparators: [','],
+		data: get_label_list()
 	});
 
 	$('#btn_admin_add_label').click(function() {
-		add_new_keyword();
+		add_new_label();
 	});
 
 	$('#btn_admin_delete_label').click(function() {
-		delete_one_keyword();
+		delete_one_label();
 	});
 
 });
-
-

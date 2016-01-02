@@ -29,7 +29,6 @@ func (c *AttachmentController) InsertOneAttachment() {
 	attachment.Candidateid, _ = c.GetInt64("candidateid")
 	attachment.Insert()
 	c.Ctx.WriteString(strconv.FormatInt(attachment.Id, 10))
-
 }
 
 func (c *AttachmentController) GetAttachments() {

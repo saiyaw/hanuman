@@ -1,8 +1,11 @@
 $(function() {
 
-	
-
-	init_candidate_page();
+	$("#select_candidate_label").select2({
+		theme: "bootstrap",
+		language: "zh-CN",
+		tags: "true",
+		data: get_label_list()
+	});	
 
 	$("#iattachment").fileinput({
 		language: "zh",
@@ -19,16 +22,14 @@ $(function() {
 		location.reload();
 	});
 
-	/*
-		$("#btn_candidate_back").click(function() {
-			window.history.back(-1);
-		});
-	*/
+	init_candidate_page();
+
 	$('#btn_candidate_save_comment').click(function() {
 		save_candidate_comment();
 	});
 
 	$("#btn_candidate_save").click(function() {
 		update_candidate_info();
+		update_candidate_label();
 	});
 });

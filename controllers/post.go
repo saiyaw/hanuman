@@ -19,14 +19,6 @@ func (c *PostController) InsertOnePost() {
 
 }
 
-func (c *PostController) GetPost() {
-	var post models.Post
-	post.Title = c.GetString("post")
-	post.Get()
-	c.Data["json"] = &post
-	c.ServeJson()
-}
-
 func (c *PostController) GetPostList() {
 	var post models.Post
 	ps := post.GetPostList()

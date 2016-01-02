@@ -8,33 +8,33 @@ import (
 	_ "github.com/lib/pq"
 )
 
-type Keyword struct {
+type Label struct {
 	Id      int64     `orm:"pk;auto"`
 	Content string    `orm:"unique"`
 	Created time.Time `orm:"auto_now_add;type(datetime)"`
 	Updated time.Time `orm:"auto_now;type(datetime)"`
 }
 
-func (k *Keyword) Insert() error {
+func (l *Label) Insert() error {
 	o := orm.NewOrm()
 	o.Begin()
 
-	id, err := o.Insert(k)
+	id, err := o.Insert(l)
 	if err != nil {
 		log.Println(err.Error())
 		o.Rollback()
 		return err
 	} else {
-		k.Id = id
+		l.Id = id
 	}
 	o.Commit()
 	return nil
 }
 
-func (k Keyword) Delete() error {
+func (l Label) Delete() error {
 	o := orm.NewOrm()
 	o.Begin()
-	_, err := o.Delete(&k)
+	_, err := o.Delete(&l)
 	if err != nil {
 		o.Rollback()
 		return err
@@ -43,15 +43,15 @@ func (k Keyword) Delete() error {
 	return nil
 }
 
-func (k Keyword) Get() error {
+func (l *Label) Get() error {
 	o := orm.NewOrm()
-	err := o.Read(k)
+	err := o.Read(l)
 	return err
 }
 
-func (k Keyword) GetKeywordList() []orm.ParamsList {
+func (l Label) GetLabelList() []orm.ParamsList {
 	o := orm.NewOrm()
 	lists := []orm.ParamsList{}
-	o.QueryTable("keyword").ValuesList(&lists, "Id", "Content")
+	o.QueryTable("label").ValuesList(&lists, "Id", "Content")
 	return lists
 }

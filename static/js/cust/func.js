@@ -41,7 +41,7 @@ function leadingZero(val) {
 
 function save_candidate_comment() {
     var result = null;
-    var comment = $("textarea[name=textarea_comment").val();
+    var comment = $("textarea[name=textarea_comment]").val();
     if (comment.length == 0) {
         return result;
     }
@@ -50,7 +50,7 @@ function save_candidate_comment() {
         async: false,
         url: "/insertcomment",
         data: {
-            "content": $("textarea[name=textarea_comment").val(),
+            "content": $("textarea[name=textarea_comment]").val(),
             "candidateid": $.cookie("id")
         },
         success: function(r) {
@@ -61,9 +61,9 @@ function save_candidate_comment() {
     return result;
 }
 
-function add_new_keyword() {
+function add_new_label() {
     var result = null;
-    var label = $("select[name=select_label").val();
+    var label = $("select[name=select_label]").val();
     if (label == null) {
         return result;
     }
@@ -83,7 +83,7 @@ function add_new_keyword() {
     $.ajax({
         type: "POST",
         async: false,
-        url: "/insertkeyword",
+        url: "/insertlabel",
         data: {
             "label": last
         },
@@ -95,12 +95,12 @@ function add_new_keyword() {
     return result;
 }
 
-function get_keyword_list() {
+function get_label_list() {
     var result = [];
     $.ajax({
         type: "GET",
         async: false,
-        url: "/getkeywordlist",
+        url: "/getlabellist",
         success: function(r) {
             $.each(r, function(index, value) {
                 var item = {
@@ -112,4 +112,49 @@ function get_keyword_list() {
         }
     });
     return result;
+}
+
+function get_candidate_label_list() {
+    var result = [];
+    $.ajax({
+        type: "POST",
+        async: false,
+        url: "/getcandidatelabellist",
+        data: {
+            "candidateid": $.cookie("id"),
+        },
+        success: function(r) {
+            $.each(r, function(index, value) {
+                var item = {
+                    id: value[0],
+                    labelid: value[1]
+                };
+                result.push(item);
+            });
+        }
+    });
+    return result;
+}
+
+function insert_candidate_label() {
+    var labels = $("select[name=select_label]").val();
+    var labeldata = "";
+    $.each(labels, function(index, value) {
+        labeldata += value + "|";
+    })
+    if (labeldata.length == 0){
+        return;
+    }
+    $.ajax({
+        type: "POST",
+        async: false,
+        url: "/insertcandidatelabel",
+        data: {
+            "candidateid": $.cookie("id"),
+            "labels": labeldata,
+        },
+        success: function(r) {
+            result = r;
+        }
+    });
 }

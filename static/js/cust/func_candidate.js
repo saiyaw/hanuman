@@ -66,6 +66,17 @@ function get_attachment_list() {
 
 }
 
+function fill_candidate_label(){
+    var labels = get_candidate_label_list();
+    var labeldata = [];
+    $.each(labels, function(index, value){
+        content = value['labelid'];
+        labeldata.push(content);
+    }); 
+
+    $('#select_candidate_label').val(labeldata).trigger("change");
+}
+
 function fill_candidate_info(info) {
 	$('#iname').val(info.Fullname);
 	$('#iage').val(info.Age);
@@ -77,6 +88,7 @@ function fill_candidate_info(info) {
 	$('#ipost').val(info.Post);
 	$('#icompany').val(info.Company);
 
+	fill_candidate_label();
 }
 
 function update_candidate_info() {
@@ -95,7 +107,7 @@ function update_candidate_info() {
 			"city": $("#icity").val(),
 			"post": $("#ipost").val(),
 			"workyear": $("#iworkyear").val(),
-			"company" : $("#icompany").val(),
+			"company": $("#icompany").val(),
 		},
 		success: function(r) {
 			result = r;
@@ -103,6 +115,49 @@ function update_candidate_info() {
 	});
 	return result;
 }
+
+function update_candidate_label() {
+	remove_candidate_label();
+	insert_candidate_label();
+}
+
+function remove_candidate_label() {
+	$.ajax({
+		type: "POST",
+		async: false,
+		url: "/deletecandidatelabel",
+		data: {
+			"candidateid": $.cookie("id"),
+		},
+		success: function(r) {
+			result = r;
+		}
+	});
+}
+
+function insert_candidate_label() {
+	var labels = $('#select_candidate_label').val();
+	var labeldata = "";
+	$.each(labels, function(index, value) {
+		labeldata += value + "|";
+	})
+	if (labeldata.length == 0){
+		return;
+	}
+	$.ajax({
+		type: "POST",
+		async: false,
+		url: "/insertcandidatelabel",
+		data: {
+			"candidateid": $.cookie("id"),
+			"labels": labeldata,
+		},
+		success: function(r) {
+			result = r;
+		}
+	});
+}
+
 
 function init_comment_list() {
 	var list = get_comment_list();
@@ -129,14 +184,4 @@ function init_candidate_page() {
 
 	// init attachment
 	init_attachment_list();
-
-	$("#select_candidate_label").select2({
-		theme: "bootstrap",
-		language: "zh-CN",
-		tags: "true",
-		data: get_keyword_list()
-	});
-
-
-
 }
