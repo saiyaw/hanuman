@@ -65,10 +65,10 @@ func (cl CandidateLabel) DeleteCandidateLabels() error {
 	return nil
 }
 
-func (cl CandidateLabel) Delete() error {
+func (cl CandidateLabel) DeleteCandidateLabelsByLabel() error {
 	o := orm.NewOrm()
 	o.Begin()
-	_, err := o.Delete(&cl)
+	_, err := o.QueryTable("candidate_label").Filter("Labelid", cl.Labelid).Delete()
 	if err != nil {
 		log.Println(err.Error())
 		o.Rollback()

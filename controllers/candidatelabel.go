@@ -34,10 +34,19 @@ func (c *CandidateLabelController) InsertCandidateLabel() {
 }
 
 func (c *CandidateLabelController) DeleteCandidateLabel() {
-	candidateid, _ := c.GetInt64("candidateid")
 	var cl models.CandidateLabel
-	cl.Candidateid = candidateid
+	cl.Candidateid, _ = c.GetInt64("candidateid")
+
 	cl.DeleteCandidateLabels()
+
+	c.Ctx.WriteString("ok")
+}
+
+func (c *CandidateLabelController) DeleteCandidateLabelByLabel() {
+	var cl models.CandidateLabel
+	cl.Labelid, _ = c.GetInt64("labelid")
+
+	cl.DeleteCandidateLabelsByLabel()
 
 	c.Ctx.WriteString("ok")
 }

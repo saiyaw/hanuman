@@ -13,7 +13,10 @@ $(function() {
 	});
 
 	$('#btn_admin_delete_label').click(function() {
-		delete_one_label();
+		var labelid = $("#select_admin_label").select2("data")[0].id;
+		delete_one_label(labelid);
+		delete_candidate_label(labelid);
+		location.reload();
 	});
 
 });

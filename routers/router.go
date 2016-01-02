@@ -35,5 +35,6 @@ func init() {
 	beego.Router("/insertcandidatelabel", &controllers.CandidateLabelController{}, "POST:InsertCandidateLabel")
 	beego.Router("/getcandidatelabellist", &controllers.CandidateLabelController{}, "POST:GetCandidateLabelList")
 	beego.Router("/deletecandidatelabel", &controllers.CandidateLabelController{}, "POST:DeleteCandidateLabel")
+	beego.Router("/deletecandidatelabelbylabel", &controllers.CandidateLabelController{}, "POST:DeleteCandidateLabelByLabel")
 
 }

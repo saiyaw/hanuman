@@ -1,15 +1,29 @@
-function delete_one_label(){
-	var label_data = $("#select_admin_label").select2("data")[0];
-	$.ajax({
+function delete_one_label(labelid) {
+    $.ajax({
         type: "POST",
         async: false,
         url: "/deletelabel",
         data: {
-            "labelid": label_data.id
+            "labelid": labelid
         },
         success: function(r) {
             result = r;
-            location.reload();
         }
     });
+}
+
+function delete_candidate_label(labelid) {
+    $.ajax({
+        type: "POST",
+        async: false,
+        url: "/deletecandidatelabelbylabel",
+        data: {
+            "labelid": labelid
+        },
+        success: function(r) {
+            result = r;
+
+        }
+    });
+
 }
