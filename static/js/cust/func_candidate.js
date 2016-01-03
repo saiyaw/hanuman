@@ -135,28 +135,7 @@ function remove_candidate_label() {
 	});
 }
 
-function insert_candidate_label() {
-	var labels = $('#select_candidate_label').val();
-	var labeldata = "";
-	$.each(labels, function(index, value) {
-		labeldata += value + "|";
-	})
-	if (labeldata.length == 0){
-		return;
-	}
-	$.ajax({
-		type: "POST",
-		async: false,
-		url: "/insertcandidatelabel",
-		data: {
-			"candidateid": $.cookie("id"),
-			"labels": labeldata,
-		},
-		success: function(r) {
-			result = r;
-		}
-	});
-}
+
 
 
 function init_comment_list() {
