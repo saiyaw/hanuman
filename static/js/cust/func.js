@@ -39,6 +39,7 @@ function leadingZero(val) {
 }
 
 
+
 function save_candidate_comment() {
     var result = null;
     var comment = $("textarea[name=textarea_comment]").val();
@@ -61,39 +62,6 @@ function save_candidate_comment() {
     return result;
 }
 
-function add_new_label() {
-    var result = null;
-    var label = $("select[name=select_label]").val();
-    if (label == null) {
-        return result;
-    }
-    if (label.length == 0) {
-        return result;
-    }
-    var last = "";
-    if (typeof(label) == "string") {
-        last = label;
-    } else {
-        last = label[label.length - 1];
-    }
-    if (last.length == 0) {
-        return result;
-    }
-
-    $.ajax({
-        type: "POST",
-        async: false,
-        url: "/insertlabel",
-        data: {
-            "label": last
-        },
-        success: function(r) {
-            result = r;
-            location.reload();
-        }
-    });
-    return result;
-}
 
 function get_label_list() {
     var result = [];
@@ -136,25 +104,3 @@ function get_candidate_label_list() {
     return result;
 }
 
-function insert_candidate_label() {
-    var labels = $("select[name=select_label]").val();
-    var labeldata = "";
-    $.each(labels, function(index, value) {
-        labeldata += value + "|";
-    })
-    if (labeldata.length == 0){
-        return;
-    }
-    $.ajax({
-        type: "POST",
-        async: false,
-        url: "/insertcandidatelabel",
-        data: {
-            "candidateid": $.cookie("id"),
-            "labels": labeldata,
-        },
-        success: function(r) {
-            result = r;
-        }
-    });
-}

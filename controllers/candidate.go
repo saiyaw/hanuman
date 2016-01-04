@@ -12,57 +12,55 @@ type CandidateController struct {
 }
 
 func (c *CandidateController) Get() {
-	c.TplNames = "candidate.tpl"
 	c.Layout = "layout.tpl"
+	c.TplNames = "candidate.tpl"
+}
+
+func setCandidateInfoFromControl(c *CandidateController) models.Candidate {
+	var candidate models.Candidate
+
+	id, err := c.GetInt64("candidateid")
+	if err != nil {
+		beego.Debug("failed to get candidate id : ", err.Error())
+	} else {
+		candidate.Id = id
+	}
+
+	candidate.Fullname = c.GetString("fullname")
+
+	candidate.Age = c.GetString("age")
+
+	candidate.Gender = c.GetString("gender")
+
+	candidate.Mobile = c.GetString("mobile")
+
+	candidate.Email = c.GetString("email")
+
+	candidate.Workyear = c.GetString("workyear")
+
+	candidate.Post = c.GetString("post")
+
+	candidate.City = c.GetString("city")
+
+	candidate.Company = c.GetString("company")
+
+	return candidate
+
 }
 
 func (c *CandidateController) InsertOneCandidate() {
-	var candidate models.Candidate
-	candidate.Fullname = c.GetString("fullname")
+	candidate := setCandidateInfoFromControl(c)
+	err := candidate.Insert()
+	if err != nil {
+		c.Ctx.WriteString(err.Error())
+	} else {
+		c.Ctx.WriteString(strconv.FormatInt(candidate.Id, 10))
+	}
 
-	candidate.Age = c.GetString("age")
-
-	candidate.Gender = c.GetString("gender")
-
-	candidate.Mobile = c.GetString("mobile")
-
-	candidate.Email = c.GetString("email")
-
-	candidate.Workyear = c.GetString("workyear")
-
-	candidate.Post = c.GetString("post")
-
-	candidate.City = c.GetString("city")
-
-	candidate.Company = c.GetString("company")
-
-	candidate.Insert()
-	c.Ctx.WriteString(strconv.FormatInt(candidate.Id, 10))
 }
 
-func (c *CandidateController) UpdateCandidate() {
-	var candidate models.Candidate
-
-	candidate.Id, _ = c.GetInt64("id")
-
-	candidate.Fullname = c.GetString("fullname")
-
-	candidate.Age = c.GetString("age")
-
-	candidate.Gender = c.GetString("gender")
-
-	candidate.Mobile = c.GetString("mobile")
-
-	candidate.Email = c.GetString("email")
-
-	candidate.Workyear = c.GetString("workyear")
-
-	candidate.Post = c.GetString("post")
-
-	candidate.City = c.GetString("city")
-
-	candidate.Company = c.GetString("company")
-
+func (c *CandidateController) UpdateOneCandidate() {
+	candidate := setCandidateInfoFromControl(c)
 	err := candidate.Update()
 	if err != nil {
 		c.Ctx.WriteString(err.Error())

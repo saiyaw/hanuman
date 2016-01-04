@@ -35,10 +35,8 @@ func (c *Candidate) getMD5() {
 
 func (c *Candidate) Insert() error {
 	c.getMD5()
-
 	o := orm.NewOrm()
 	o.Begin()
-
 	id, err := o.Insert(c)
 	if err != nil {
 		log.Println(err.Error())

@@ -25,17 +25,9 @@ type NewController struct {
 }
 
 func (c *NewController) Get() {
-	c.TplNames = "new.tpl"
+	c.TplNames = "basic.tpl"
 	c.Layout = "layout.tpl"
-}
 
-type ViewController struct {
-	beego.Controller
-}
-
-func (c *ViewController) Get() {
-	c.TplNames = "view.tpl"
-	c.Layout = "layout.tpl"
 }
 
 type AdminController struct {

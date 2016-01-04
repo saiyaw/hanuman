@@ -3,7 +3,7 @@
 
 
 <div class="container-fluid">
-  <table id="candidatelist" class="table table-striped table-bordered"  cellspacing="0" width="100%">
+  <table id="table_candidate_list" class="table table-striped table-bordered"  cellspacing="0" width="100%">
     <thead>
       <tr>
         <th>Id</th>

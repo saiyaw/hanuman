@@ -9,13 +9,12 @@ func init() {
 	beego.Router("/", &controllers.MainController{})
 	beego.Router("/list", &controllers.ListController{})
 	beego.Router("/new", &controllers.NewController{})
-	beego.Router("/view", &controllers.ViewController{})
 	beego.Router("/admin", &controllers.AdminController{})
 	beego.Router("/candidate", &controllers.CandidateController{})
 
 	beego.Router("/getcandidatelist", &controllers.CandidateController{}, "GET:GetCandidates")
 	beego.Router("/insertcandidate", &controllers.CandidateController{}, "POST:InsertOneCandidate")
-	beego.Router("/updatecandidate", &controllers.CandidateController{}, "POST:UpdateCandidate")
+	beego.Router("/updatecandidate", &controllers.CandidateController{}, "POST:UpdateOneCandidate")
 	beego.Router("/getcandidatebyid", &controllers.CandidateController{}, "POST:GetCandidateByID")
 
 	beego.Router("/insertcomment", &controllers.CommentController{}, "POST:InsertOneComment")

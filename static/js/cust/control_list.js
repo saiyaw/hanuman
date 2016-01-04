@@ -1,5 +1,5 @@
 $(function() {
-    var candidatetable = $('#candidatelist').DataTable({
+    var candidatetable = $('#table_candidate_list').DataTable({
         stateSave: true,
         "ajax": {
             "url": "/getcandidatelist",
@@ -34,7 +34,7 @@ $(function() {
     // hide the column :id
     candidatetable.column(0).visible(false);
 
-    $('#candidatelist tbody').on('click', 'button', function() {
+    $('#table_candidate_list tbody').on('click', 'button', function() {
         var pdata = candidatetable.row($(this).parents('tr')).data();
         $.cookie("id", pdata[0]);
         window.location.href = "/candidate";
