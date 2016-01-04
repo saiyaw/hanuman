@@ -9,7 +9,7 @@ $(function() {
 		theme: "bootstrap",
 		language: "zh-CN",
 		tags: "true",
-		data: get_label_list(),
+		data: get_label_list()
 	});
 
 	$("#btn_candidate_save").click(function() {

@@ -1,5 +1,4 @@
-<script type="text/javascript" src="../static/js/cust/func_admin.js"></script>
-<script type="text/javascript" src="../static/js/cust/control_admin.js"></script>
+
 <div class="panel panel-primary" id="div_admin_label">
   <div class="panel-heading">标签管理</div>
   <div class="panel-body">
@@ -28,3 +27,6 @@
 </div>
 <footer>
 </footer>
+
+<script type="text/javascript" src="../static/js/cust/func_admin.js"></script>
+<script type="text/javascript" src="../static/js/cust/control_admin.js"></script>

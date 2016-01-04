@@ -1,5 +1,4 @@
-<script type="text/javascript" src="../static/js/cust/func_candidate.js"></script>
-<script type="text/javascript" src="../static/js/cust/control_candidate.js"></script>
+
 
 
 {{template "basic.tpl"}}
@@ -40,3 +39,6 @@
 </div>
 <footer>
 </footer>
+
+<script type="text/javascript" src="../static/js/cust/func_candidate.js"></script>
+<script type="text/javascript" src="../static/js/cust/control_candidate.js"></script>

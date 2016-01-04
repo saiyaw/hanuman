@@ -68,7 +68,6 @@ function get_attachment_list() {
 
 function fill_candidate_label(){
     var labels = get_candidate_label_list();
-  //  var list = $('#select_candidate_label').select2('data');
     var labeldata = [];
     $.each(labels, function(index, value){
         content = value['labelid'];
@@ -89,6 +88,7 @@ function fill_candidate_info(info) {
 	$('#input_candidate_post').val(info.Post);
 	$('#input_candidate_company').val(info.Company);
 
+	// init candidate label
 	fill_candidate_label();
 }
 

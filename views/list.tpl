@@ -1,6 +1,3 @@
-<script type="text/javascript" src="../static/js/cust/func_list.js"></script>
-<script type="text/javascript" src="../static/js/cust/control_list.js"></script>
-
 
 <div class="container-fluid">
   <table id="table_candidate_list" class="table table-striped table-bordered"  cellspacing="0" width="100%">
@@ -21,3 +18,6 @@
     </thead>
   </table>
 </div>
+
+<script type="text/javascript" src="../static/js/cust/func_list.js"></script>
+<script type="text/javascript" src="../static/js/cust/control_list.js"></script>

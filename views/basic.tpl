@@ -1,6 +1,3 @@
-<script type="text/javascript" src="../static/js/cust/func_basic.js"></script>
-<script type="text/javascript" src="../static/js/cust/control_basic.js"></script>
-
 <div class="panel panel-primary" id="div_candidate_basic">
   <div class="panel-heading">基本信息</div>
   <div class="panel-body">
@@ -88,3 +85,7 @@
   </div>
 </div>
 </div>
+
+
+<script type="text/javascript" src="../static/js/cust/func_basic.js"></script>
+<script type="text/javascript" src="../static/js/cust/control_basic.js"></script>
