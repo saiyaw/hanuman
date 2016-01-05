@@ -82,3 +82,15 @@ func (c *Candidate) GetCandidateByMD5() error {
 	err := o.QueryTable("candidate").Filter("Md5", c.Md5).One(c)
 	return err
 }
+
+func (c Candidate) GetCandidateLabels() string {
+	var result string
+	o := orm.NewOrm()
+	var list orm.ParamsList
+	o.Raw("SELECT label.content FROM candidate_label, label WHERE candidate_label.labelid = label.id AND candidateid = ?; ", c.Id).ValuesFlat(&list)
+	for _, v := range list {
+		result = result + v.(string) + ";"
+	}
+
+	return result
+}

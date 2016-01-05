@@ -26,6 +26,10 @@ $(function() {
         }, {
             data: 9
         }, {
+            data: 10
+        }, {
+            data: 11
+        }, {
             "data": null,
             "defaultContent": "<button class='btn btn-link'>More</button>"
         }]
@@ -33,6 +37,9 @@ $(function() {
     });
     // hide the column :id
     candidatetable.column(0).visible(false);
+    candidatetable.column(8).visible(false);
+    candidatetable.column(9).visible(false);
+    candidatetable.column(10).visible(false);
 
     $('#table_candidate_list tbody').on('click', 'button', function() {
         var pdata = candidatetable.row($(this).parents('tr')).data();

@@ -74,6 +74,13 @@ func (c *CandidateController) GetCandidates() {
 
 	var candidate models.Candidate
 	ps := candidate.GetCandidates()
+	// get candidate labels
+	for i := range ps {
+		var cand models.Candidate
+		cand.Id = ps[i][0].(int64)
+		ps[i] = append(ps[i], cand.GetCandidateLabels())
+
+	}
 	c.Data["json"] = &ps
 	c.ServeJson()
 }

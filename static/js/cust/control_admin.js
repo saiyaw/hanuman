@@ -4,7 +4,7 @@ $(function() {
 		theme: "bootstrap",
 		language: "zh-CN",
 		tags: "true",
-		tokenSeparators: [','],
+		tokenSeparators: [';'],
 		data: get_label_list()
 	});
 
