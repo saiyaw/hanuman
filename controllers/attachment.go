@@ -21,7 +21,7 @@ func (c *AttachmentController) InsertOneAttachment() {
 	if err != nil {
 		beego.Error(err)
 	} else {
-		c.SaveToFile("attachment_upload", workpath+"/static/file/"+h.Filename)
+		c.SaveToFile("attachment_upload", workpath+"/download/"+h.Filename)
 	}
 
 	var attachment models.Attachment

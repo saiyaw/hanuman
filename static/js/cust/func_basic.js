@@ -71,6 +71,9 @@ function remove_candidate_label() {
 
 function insert_candidate_label() {
     var labels = $("#select_candidate_label").val();
+    if (labels == null){
+        return;
+    }
     var labeldata = "";
     $.each(labels, function(index, value) {
         labeldata += value + "|";

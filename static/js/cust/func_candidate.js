@@ -5,7 +5,7 @@ function add_comment_into_list(createtime, content) {
 }
 
 function add_attachment_into_list(filename) {
-	var component = '<li class="list-group-item"><a class="list-group-item" href="/static/file/' + filename + '">' + filename + '</a></li>';
+	var component = '<li class="list-group-item"><a class="list-group-item" href="/download/' + filename + '">' + filename + '</a></li>';
 	$("#ul_candidate_attachment_list").append(component);
 
 }

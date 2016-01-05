@@ -48,6 +48,23 @@ $(function() {
 
     });
 
+    $('#table_candidate_list tfoot th').each(function() {
+        var title = $(this).text();
+        if (title != "") {
+            $(this).html('<input type="text" placeholder="搜索 ' + title + '" />');
+        }
+    });
+
+    candidatetable.columns().every(function() {
+        var that = this;
+
+        $('input', this.footer()).on('keyup change', function() {
+            if (that.search() !== this.value) {
+                that.search(this.value).draw();
+            }
+        });
+    });
+
 
 
 });
