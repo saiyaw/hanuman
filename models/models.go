@@ -1,6 +1,7 @@
 package models
 
 import (
+	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
 
 	_ "github.com/lib/pq"
@@ -9,7 +10,7 @@ import (
 func init() {
 	orm.Debug = false
 	orm.RegisterDriver("postgres", orm.DR_Postgres)
-	connstr := "user=hanuman password=123456 dbname=hanuman sslmode=disable"
+	connstr := "user=hanuman password=123456 sslmode=disable dbname=" + beego.AppConfig.String("dbname")
 	orm.RegisterDataBase("default", "postgres", connstr)
 
 	orm.RegisterModel(new(Candidate), new(Comment), new(Attachment), new(Post), new(Label), new(CandidateLabel))

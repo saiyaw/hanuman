@@ -13,7 +13,12 @@ $(function() {
 	});
 
 	$("#btn_candidate_save").click(function() {
+		var name = $("#input_candidate_name").val();
+		if (name.length == 0){
+			return;
+		}
 		var current_url = $(location).attr('pathname');
+
 		if (current_url == "/new") {
 			var result = insert_candidate_info();
 			if (parseInt(result) > 0) {
@@ -28,7 +33,7 @@ $(function() {
 		}
 
 	});
-
+/*
 	$("#form_candidate_basic").validate({
 		rules: {
 			input_candidate_name: {
@@ -54,5 +59,5 @@ $(function() {
 		},
 
 	});
-
+*/
 });

@@ -1,5 +1,4 @@
 <div class="panel panel-primary" id="div_candidate_basic">
-  <form id="form_candidate_basic">
     <div class="panel-heading">基本信息</div>
     <div class="panel-body">      
       <div class="container-fluid">
@@ -83,10 +82,9 @@
   </div>
   <div class="panel-footer">
     <div class="container-fluid">
-      <button type="submit" id="btn_candidate_save" name="btn_candidate_save" class="btn btn-default">保存</button>
+      <button id="btn_candidate_save" name="btn_candidate_save" class="btn btn-default">保存</button>
     </div>
   </div>
-</form>
 </div>
 <script type="text/javascript" src="../static/js/jquery.validate.min.js"></script>
 <script type="text/javascript" src="../static/js/localization/messages_zh.min.js"></script>
