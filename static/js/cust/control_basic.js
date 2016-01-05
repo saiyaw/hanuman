@@ -29,6 +29,30 @@ $(function() {
 
 	});
 
+	$("#form_candidate_basic").validate({
+		rules: {
+			input_candidate_name: {
+				required: true
+			},
+			input_candidate_email: {
+				required: true,
+				email: true
+			},
+			input_candidate_post: {
+				required: true
+			}
+		},
+		messages: {
+			input_candidate_name: "不能为空"
+
+		},
+		tooltip_options: {
+			input_candidate_name: {
+				//	placement: 'right',
+				//	html: true
+			}
+		},
+
+	});
+
 });
-
-
