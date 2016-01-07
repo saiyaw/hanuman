@@ -73,7 +73,8 @@ function get_label_list() {
             $.each(r, function(index, value) {
                 var item = {
                     id: value[0],
-                    text: value[1]
+                    text: value[1],
+                    disabled : value[2],
                 };
                 result.push(item);
             });
@@ -95,7 +96,7 @@ function get_candidate_label_list() {
             $.each(r, function(index, value) {
                 var item = {
                     id: value[0],
-                    labelid: value[1]
+                    labelid: value[1],
                 };
                 result.push(item);
             });
@@ -103,4 +104,3 @@ function get_candidate_label_list() {
     });
     return result;
 }
-

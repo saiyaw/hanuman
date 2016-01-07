@@ -21,7 +21,7 @@ func (c *LabelController) InsertOneLabel() {
 func (c *LabelController) DeleteOneLabel() {
 	var l models.Label
 	l.Id, _ = c.GetInt64("labelid")
-	err := l.Delete()
+	err := l.SetDeleted()
 	if err != nil {
 		c.Ctx.WriteString(err.Error())
 	} else {
@@ -41,4 +41,21 @@ func (c *LabelController) GetLabel() {
 	l.Id, _ = c.GetInt64("labelid")
 	l.Get()
 	c.Ctx.WriteString(l.Content)
+}
+
+func (c *LabelController) CleanUselessLabels() {
+	var l models.Label
+	lst := l.GetSetDeletedLabelList()
+	for _, v := range lst {
+		var candidatelabel models.CandidateLabel
+		candidatelabel.Labelid = v[0].(int64)
+		if candidatelabel.IsExistingInCandidateLabel() {
+			// do nothing
+		} else {
+			var label models.Label
+			label.Id = v[0].(int64)
+			label.Delete()
+		}
+	}
+	c.Ctx.WriteString("ok")
 }

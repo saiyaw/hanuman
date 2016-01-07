@@ -52,6 +52,16 @@ func InsertCandidateLabels(Labels []CandidateLabel) {
 	i.Close()
 }
 
+func (cl CandidateLabel) IsExistingInCandidateLabel() bool {
+	o := orm.NewOrm()
+	err := o.Read(&cl, "Labelid")
+	if err != nil {
+		log.Println(err.Error())
+		return false
+	}
+	return true
+}
+
 func (cl CandidateLabel) DeleteCandidateLabels() error {
 	o := orm.NewOrm()
 	o.Begin()

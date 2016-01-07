@@ -28,8 +28,9 @@ func init() {
 
 	beego.Router("/insertlabel", &controllers.LabelController{}, "POST:InsertOneLabel")
 	beego.Router("/getlabellist", &controllers.LabelController{}, "GET:GetLabelList")
-	beego.Router("/getlabel", &controllers.LabelController{}, "GET:GetLabel")
+	beego.Router("/getlabel", &controllers.LabelController{}, "POST:GetLabel")
 	beego.Router("/deletelabel", &controllers.LabelController{}, "POST:DeleteOneLabel")
+	beego.Router("/cleanuselesslabels", &controllers.LabelController{}, "POST:CleanUselessLabels")
 
 	beego.Router("/insertcandidatelabel", &controllers.CandidateLabelController{}, "POST:InsertCandidateLabel")
 	beego.Router("/getcandidatelabellist", &controllers.CandidateLabelController{}, "POST:GetCandidateLabelList")

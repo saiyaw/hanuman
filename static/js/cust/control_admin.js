@@ -15,7 +15,11 @@ $(function() {
 	$('#btn_admin_delete_label').click(function() {
 		var labelid = $("#select_admin_label").select2("data")[0].id;
 		delete_one_label(labelid);
-		delete_candidate_label(labelid);
+		location.reload();
+	});
+
+	$('#btn_admin_clean_label').click(function() {
+		clean_deleted_labels();
 		location.reload();
 	});
 
