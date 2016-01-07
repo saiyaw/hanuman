@@ -57,7 +57,7 @@ $(function() {
             data: 11
         }, {
             "data": null,
-            "defaultContent": "<button class='btn btn-link'>More</button>"
+            "defaultContent": "<button class='btn btn-link'><span class='glyphicon glyphicon-edit'></span></button>"
         }]
 
     });
