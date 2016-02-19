@@ -44,6 +44,8 @@ func setCandidateInfoFromControl(c *CandidateController) models.Candidate {
 
 	candidate.Company = c.GetString("company")
 
+	candidate.Education = c.GetString("education")
+
 	return candidate
 
 }

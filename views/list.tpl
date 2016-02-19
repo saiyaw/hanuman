@@ -13,6 +13,7 @@
         <th>性别</th>
         <th>电话</th>
         <th>邮箱</th>
+        <th>学历</th>
         <th>MD5</th>
         <th>标签</th>        
         <th>详细</th>
@@ -30,6 +31,7 @@
         <th>性别</th>
         <th>电话</th>
         <th>邮箱</th>
+        <th>学历</th>
         <th>MD5</th>
         <th>标签</th>        
         <th></th>

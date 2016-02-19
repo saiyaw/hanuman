@@ -103,6 +103,7 @@ function fill_candidate_info(info) {
 	$('#input_candidate_city').val(info.City);
 	$('#input_candidate_post').val(info.Post);
 	$('#input_candidate_company').val(info.Company);
+	$('#input_candidate_education').val(info.Education);
 
 	// init candidate label
 	fill_candidate_label();

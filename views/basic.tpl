@@ -67,10 +67,16 @@
           <div class="col-xs-3">
             <div class="input-group">
               <span class="input-group-addon" id="basic-addon-company">公司:</span>
-              <input type="text" id="input_candidate_company" name="input_candidate_city" class="form-control" placeholder="公司" aria-describedby="basic-addon-company">
+              <input type="text" id="input_candidate_company" name="input_candidate_company" class="form-control" placeholder="公司" aria-describedby="basic-addon-company">
             </div>
           </div>
-          <div class="col-xs-9">
+          <div class="col-xs-3">
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon-education">学历:</span>
+              <input type="text" id="input_candidate_education" name="input_candidate_education" class="form-control" placeholder="学历" aria-describedby="basic-addon-education">
+            </div>
+          </div>
+          <div class="col-xs-6">
             <div class="input-group">
               <span class="input-group-addon" id="basic-addon-label">标签:</span>
             <select id="select_candidate_label" name="select_label" class="form-control" multiple></select>

@@ -1,6 +1,6 @@
 $(function() {
     var candidatetable = $('#table_candidate_list').DataTable({
-        stateSave: true,
+        stateSave: false,
         language: {
 
             "sProcessing": "处理中...",
@@ -56,16 +56,19 @@ $(function() {
         }, {
             data: 11
         }, {
+            data: 12
+        },{
             "data": null,
             "defaultContent": "<button class='btn btn-link'><span class='glyphicon glyphicon-edit'></span></button>"
         }]
 
     });
-    // hide the column :id
+    // hide the column:
     candidatetable.column(0).visible(false);
     candidatetable.column(8).visible(false);
     candidatetable.column(9).visible(false);
-    candidatetable.column(10).visible(false);
+    candidatetable.column(11).visible(false);
+    candidatetable.column(12).visible(false);
 
     $('#table_candidate_list tbody').on('click', 'button', function() {
         var pdata = candidatetable.row($(this).parents('tr')).data();

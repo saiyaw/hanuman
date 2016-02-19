@@ -11,23 +11,24 @@ import (
 )
 
 type Candidate struct {
-	Id       int64 `orm:"pk;auto"`
-	Fullname string
-	Age      string
-	Gender   string
-	Mobile   string
-	Email    string
-	Workyear string
-	City     string
-	Post     string
-	Company  string
-	Md5      string    `orm:"unique"`
-	Created  time.Time `orm:"auto_now_add;type(datetime)"`
-	Updated  time.Time `orm:"auto_now;type(datetime)"`
+	Id        int64 `orm:"pk;auto"`
+	Fullname  string
+	Age       string
+	Gender    string
+	Mobile    string
+	Email     string
+	Workyear  string
+	City      string
+	Post      string
+	Company   string
+	Education string
+	Md5       string    `orm:"unique"`
+	Created   time.Time `orm:"auto_now_add;type(datetime)"`
+	Updated   time.Time `orm:"auto_now;type(datetime)"`
 }
 
 func (c *Candidate) getMD5() {
-	s := c.Fullname + c.Age + c.Gender + c.Mobile + c.Email + c.Workyear + c.Post + c.City + c.Company
+	s := c.Fullname + c.Age + c.Gender + c.Mobile + c.Email + c.Workyear + c.Post + c.City + c.Company + c.Education
 	hasher := md5.New()
 	hasher.Write([]byte(s))
 	c.Md5 = hex.EncodeToString(hasher.Sum(nil))
@@ -54,7 +55,7 @@ func (c *Candidate) Update() error {
 	c.getMD5()
 	o := orm.NewOrm()
 	o.Begin()
-	_, err := o.Update(c, "Fullname", "Age", "Post", "Workyear", "City", "Gender", "Mobile", "Email", "Company", "Md5", "Updated")
+	_, err := o.Update(c, "Fullname", "Age", "Post", "Workyear", "City", "Gender", "Mobile", "Email", "Company", "Education", "Md5", "Updated")
 	if err != nil {
 		log.Println(err.Error())
 		o.Rollback()
@@ -67,7 +68,7 @@ func (c *Candidate) Update() error {
 func (c Candidate) GetCandidates() []orm.ParamsList {
 	o := orm.NewOrm()
 	lists := []orm.ParamsList{}
-	o.QueryTable("candidate").ValuesList(&lists, "Id", "Fullname", "Age", "Post", "Workyear", "City", "Company", "Gender", "Mobile", "Email", "Md5")
+	o.QueryTable("candidate").ValuesList(&lists, "Id", "Fullname", "Age", "Post", "Workyear", "City", "Company", "Gender", "Mobile", "Email", "Education", "Md5")
 	return lists
 }
 
