@@ -1,6 +1,6 @@
 $(function() {
     var candidatetable = $('#table_candidate_list').DataTable({
-        stateSave: false,
+        stateSave: true,
         language: {
 
             "sProcessing": "处理中...",
