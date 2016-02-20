@@ -22,6 +22,7 @@ type Candidate struct {
 	Post      string
 	Company   string
 	Education string
+	Birthday  time.Time `orm:"null;type(date)"`
 	Md5       string    `orm:"unique"`
 	Created   time.Time `orm:"auto_now_add;type(datetime)"`
 	Updated   time.Time `orm:"auto_now;type(datetime)"`
@@ -55,7 +56,7 @@ func (c *Candidate) Update() error {
 	c.getMD5()
 	o := orm.NewOrm()
 	o.Begin()
-	_, err := o.Update(c, "Fullname", "Age", "Post", "Workyear", "City", "Gender", "Mobile", "Email", "Company", "Education", "Md5", "Updated")
+	_, err := o.Update(c, "Fullname", "Age", "Post", "Workyear", "City", "Gender", "Mobile", "Email", "Company", "Education", "Birthday", "Md5", "Updated")
 	if err != nil {
 		log.Println(err.Error())
 		o.Rollback()
@@ -68,7 +69,7 @@ func (c *Candidate) Update() error {
 func (c Candidate) GetCandidates() []orm.ParamsList {
 	o := orm.NewOrm()
 	lists := []orm.ParamsList{}
-	o.QueryTable("candidate").ValuesList(&lists, "Id", "Fullname", "Age", "Post", "Workyear", "City", "Company", "Gender", "Mobile", "Email", "Education", "Md5")
+	o.QueryTable("candidate").ValuesList(&lists, "Id", "Fullname", "Age", "Post", "Workyear", "City", "Company", "Gender", "Mobile", "Email", "Education", "Birthday", "Md5")
 	return lists
 }
 

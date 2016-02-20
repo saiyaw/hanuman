@@ -12,6 +12,12 @@ $(function() {
 		data: get_label_list()
 	});
 
+	$('#input_candidate_birthday').datetimepicker({
+		locale: 'zh-CN',
+		viewMode: 'years',
+        format: 'YYYY-MM-DD'
+	});
+
 	$("#btn_candidate_save").click(function() {
 		var name = $("#input_candidate_name").val();
 		if (name.length == 0){

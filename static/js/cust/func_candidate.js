@@ -104,6 +104,7 @@ function fill_candidate_info(info) {
 	$('#input_candidate_post').val(info.Post);
 	$('#input_candidate_company').val(info.Company);
 	$('#input_candidate_education').val(info.Education);
+ 	$('#input_candidate_birthday').val(info.Birthday.substr(0, 10));
 
 	// init candidate label
 	fill_candidate_label();

@@ -15,6 +15,7 @@ function insert_candidate_info() {
             "workyear": $("#input_candidate_workyear").val(),
             "company" : $("#input_candidate_company").val(),
             "education" : $("#input_candidate_education").val(),
+            "birthday" : $("#input_candidate_birthday").val(),
         },
         success: function(r) {
             result = r;
@@ -42,6 +43,7 @@ function update_candidate_info() {
             "workyear": $("#input_candidate_workyear").val(),
             "company" : $("#input_candidate_company").val(),
             "education" : $("#input_candidate_education").val(),
+            "birthday" : $("#input_candidate_birthday").val(),
         },
         success: function(r) {
             result = r;
