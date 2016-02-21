@@ -98,3 +98,11 @@ function insert_candidate_label() {
         }
     });
 }
+
+function update_candidate_age(){
+    var birth = $('#input_candidate_birthday').val();
+    var dob = new Date(birth);
+    var today = new Date();
+    var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
+    $('#input_candidate_age').val(age);
+}
