@@ -14,7 +14,7 @@ type CandidateController struct {
 
 func (c *CandidateController) Get() {
 	c.Layout = "layout.tpl"
-	c.TplNames = "candidate.tpl"
+	c.TplName = "candidate.tpl"
 }
 
 func setCandidateInfoFromControl(c *CandidateController) models.Candidate {
@@ -88,7 +88,7 @@ func (c *CandidateController) GetCandidates() {
 
 	}
 	c.Data["json"] = &ps
-	c.ServeJson()
+	c.ServeJSON()
 }
 
 func (c *CandidateController) GetCandidateByMD5() {
@@ -97,7 +97,7 @@ func (c *CandidateController) GetCandidateByMD5() {
 	candidate.Md5 = md5
 	candidate.GetCandidateByMD5()
 	c.Data["json"] = &candidate
-	c.ServeJson()
+	c.ServeJSON()
 }
 
 func (c *CandidateController) GetCandidateByID() {
@@ -106,5 +106,5 @@ func (c *CandidateController) GetCandidateByID() {
 	candidate.Id, _ = c.GetInt64("id")
 	candidate.GetCandidateByID()
 	c.Data["json"] = &candidate
-	c.ServeJson()
+	c.ServeJSON()
 }

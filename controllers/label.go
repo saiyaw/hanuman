@@ -33,7 +33,7 @@ func (c *LabelController) GetLabelList() {
 	var l models.Label
 	ps := l.GetLabelList()
 	c.Data["json"] = &ps
-	c.ServeJson()
+	c.ServeJSON()
 }
 
 func (c *LabelController) GetLabel() {

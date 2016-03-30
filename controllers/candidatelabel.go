@@ -56,5 +56,5 @@ func (c *CandidateLabelController) GetCandidateLabelList() {
 	cl.Candidateid, _ = c.GetInt64("candidateid")
 	ps := cl.GetCandidateLabelList()
 	c.Data["json"] = &ps
-	c.ServeJson()
+	c.ServeJSON()
 }

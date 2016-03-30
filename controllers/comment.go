@@ -26,5 +26,5 @@ func (c *CommentController) GetComments() {
 	comment.Candidateid, _ = c.GetInt64("candidateid")
 	ps := comment.GetComments()
 	c.Data["json"] = &ps
-	c.ServeJson()
+	c.ServeJSON()
 }

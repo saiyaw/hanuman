@@ -36,5 +36,5 @@ func (c *AttachmentController) GetAttachments() {
 	attachment.Candidateid, _ = c.GetInt64("candidateid")
 	ps := attachment.GetAttachments()
 	c.Data["json"] = &ps
-	c.ServeJson()
+	c.ServeJSON()
 }

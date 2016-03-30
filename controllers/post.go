@@ -23,5 +23,5 @@ func (c *PostController) GetPostList() {
 	var post models.Post
 	ps := post.GetPostList()
 	c.Data["json"] = &ps
-	c.ServeJson()
+	c.ServeJSON()
 }

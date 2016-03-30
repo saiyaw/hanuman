@@ -7,7 +7,7 @@ type MainController struct {
 }
 
 func (c *MainController) Get() {
-	c.TplNames = "index.tpl"
+	c.TplName = "index.tpl"
 	c.Layout = "layout.tpl"
 }
 
@@ -16,7 +16,7 @@ type ListController struct {
 }
 
 func (c *ListController) Get() {
-	c.TplNames = "list.tpl"
+	c.TplName = "list.tpl"
 	c.Layout = "layout.tpl"
 }
 
@@ -25,7 +25,7 @@ type NewController struct {
 }
 
 func (c *NewController) Get() {
-	c.TplNames = "basic.tpl"
+	c.TplName = "basic.tpl"
 	c.Layout = "layout.tpl"
 
 }
@@ -35,6 +35,6 @@ type AdminController struct {
 }
 
 func (c *AdminController) Get() {
-	c.TplNames = "admin.tpl"
+	c.TplName = "admin.tpl"
 	c.Layout = "layout.tpl"
 }
