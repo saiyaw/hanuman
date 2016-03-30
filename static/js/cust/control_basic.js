@@ -12,6 +12,16 @@ $(function() {
 		data: get_label_list()
 	});
 
+	$('#input_candidate_birthday').datetimepicker({
+		locale: 'zh-CN',
+		viewMode: 'years',
+        format: 'YYYY-MM-DD'
+	});
+
+	$('#input_candidate_birthday').blur(function(){
+		update_candidate_age();
+	});
+
 	$("#btn_candidate_save").click(function() {
 		var name = $("#input_candidate_name").val();
 		if (name.length == 0){
@@ -33,6 +43,9 @@ $(function() {
 		}
 
 	});
+
+
+
 /*
 	$("#form_candidate_basic").validate({
 		rules: {

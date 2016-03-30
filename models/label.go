@@ -9,10 +9,11 @@ import (
 )
 
 type Label struct {
-	Id      int64     `orm:"pk;auto"`
-	Content string    `orm:"unique"`
-	Created time.Time `orm:"auto_now_add;type(datetime)"`
-	Updated time.Time `orm:"auto_now;type(datetime)"`
+	Id        int64  `orm:"pk;auto"`
+	Content   string `orm:"unique"`
+	Isdeleted bool
+	Created   time.Time `orm:"auto_now_add;type(datetime)"`
+	Updated   time.Time `orm:"auto_now;type(datetime)"`
 }
 
 func (l *Label) Insert() error {
@@ -26,6 +27,20 @@ func (l *Label) Insert() error {
 		return err
 	} else {
 		l.Id = id
+	}
+	o.Commit()
+	return nil
+}
+
+func (l Label) SetDeleted() error {
+	l.Isdeleted = true
+	l.Updated = time.Now()
+	o := orm.NewOrm()
+	o.Begin()
+	_, err := o.Update(&l, "Isdeleted", "Updated")
+	if err != nil {
+		o.Rollback()
+		return err
 	}
 	o.Commit()
 	return nil
@@ -52,6 +67,13 @@ func (l *Label) Get() error {
 func (l Label) GetLabelList() []orm.ParamsList {
 	o := orm.NewOrm()
 	lists := []orm.ParamsList{}
-	o.QueryTable("label").ValuesList(&lists, "Id", "Content")
+	o.QueryTable("label").ValuesList(&lists, "Id", "Content", "Isdeleted")
+	return lists
+}
+
+func (l Label) GetSetDeletedLabelList() []orm.ParamsList {
+	o := orm.NewOrm()
+	lists := []orm.ParamsList{}
+	o.QueryTable("label").Filter("Isdeleted", true).ValuesList(&lists, "Id")
 	return lists
 }

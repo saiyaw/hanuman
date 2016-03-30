@@ -25,7 +25,19 @@ function delete_candidate_label(labelid) {
 
         }
     });
+}
 
+function clean_deleted_labels(){
+    $.ajax({
+        type: "POST",
+        async: false,
+        url: "/cleanuselesslabels",
+        data: {
+        },
+        success: function(r) {
+            result = r;
+        }
+    });
 }
 
 function add_new_label() {

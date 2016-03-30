@@ -11,7 +11,7 @@ import (
 type Comment struct {
 	Id          int64 `orm:"pk;auto"`
 	Candidateid int64
-	Content     string
+	Content     string    `orm:"type(text)"`
 	Created     time.Time `orm:"auto_now_add;type(datetime)"`
 	Updated     time.Time `orm:"auto_now;type(datetime)"`
 }

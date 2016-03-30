@@ -66,15 +66,31 @@ function get_attachment_list() {
 
 }
 
-function fill_candidate_label(){
-    var labels = get_candidate_label_list();
-    var labeldata = [];
-    $.each(labels, function(index, value){
-        content = value['labelid'];
-        labeldata.push(content);
-    }); 
+function get_label_content(labelid) {
+	var result = null;
+	$.ajax({
+		type: "POST",
+		async: false,
+		url: "/getlabel",
+		data: {
+			"labelid": labelid
+		},
+		success: function(output) {
+			result = output;
+		}
+	});
+	return result;
+}
 
-    $('#select_candidate_label').val(labeldata).trigger("change");
+function fill_candidate_label() {
+	var labels = get_candidate_label_list();
+	var labeldata = [];
+	$.each(labels, function(index, value) {
+		content = value['labelid'];
+		labeldata.push(content);
+	});
+
+	$('#select_candidate_label').val(labeldata).trigger("change");
 }
 
 function fill_candidate_info(info) {
@@ -87,6 +103,8 @@ function fill_candidate_info(info) {
 	$('#input_candidate_city').val(info.City);
 	$('#input_candidate_post').val(info.Post);
 	$('#input_candidate_company').val(info.Company);
+	$('#input_candidate_education').val(info.Education);
+ 	$('#input_candidate_birthday').val(info.Birthday.substr(0, 10));
 
 	// init candidate label
 	fill_candidate_label();

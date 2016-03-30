@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"strconv"
+	"time"
 
 	"github.com/astaxie/beego"
 	"github.com/saiyawang/hanuman/models"
@@ -43,6 +44,11 @@ func setCandidateInfoFromControl(c *CandidateController) models.Candidate {
 	candidate.City = c.GetString("city")
 
 	candidate.Company = c.GetString("company")
+
+	candidate.Education = c.GetString("education")
+
+	birth := c.GetString("birthday")
+	candidate.Birthday, _ = time.Parse("2006-01-02", birth)
 
 	return candidate
 

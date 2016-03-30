@@ -14,6 +14,8 @@ function insert_candidate_info() {
             "city": $("#input_candidate_city").val(),
             "workyear": $("#input_candidate_workyear").val(),
             "company" : $("#input_candidate_company").val(),
+            "education" : $("#input_candidate_education").val(),
+            "birthday" : $("#input_candidate_birthday").val(),
         },
         success: function(r) {
             result = r;
@@ -40,6 +42,8 @@ function update_candidate_info() {
             "city": $("#input_candidate_city").val(),
             "workyear": $("#input_candidate_workyear").val(),
             "company" : $("#input_candidate_company").val(),
+            "education" : $("#input_candidate_education").val(),
+            "birthday" : $("#input_candidate_birthday").val(),
         },
         success: function(r) {
             result = r;
@@ -93,4 +97,12 @@ function insert_candidate_label() {
             result = r;
         }
     });
+}
+
+function update_candidate_age(){
+    var birth = $('#input_candidate_birthday').val();
+    var dob = new Date(birth);
+    var today = new Date();
+    var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
+    $('#input_candidate_age').val(age);
 }
