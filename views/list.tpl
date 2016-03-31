@@ -1,3 +1,29 @@
+<div class="panel panel-primary" id="div_candidate_label">
+  <div class="panel-heading">标签</div>
+  <div class="panel-body">
+    <div class="container-fluid">
+      <div id="div_label_list">
+      <!--
+        <div class="col-xs-3">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon-name">名字:</span>
+            <input type="text" id="input_candidate_name" name="input_candidate_name" class="form-control" placeholder="名字" aria-describedby="basic-addon-name">
+          </div>
+        </div>
+        --> 
+      </div>
+    </div>
+    <div class="clearfix" style="margin-bottom: 10px;"></div>
+
+  
+</div>
+<div class="panel-footer">
+  <div class="container-fluid">
+    <button id="btn_label_filter" name="btn_label_filter" class="btn btn-default">过滤</button>
+  </div>
+</div>
+</div>
+
 
 <div class="container-fluid">
   <table id="table_candidate_list" class="table table-striped table-bordered"  cellspacing="0" width="100%">
@@ -37,7 +63,7 @@
         <th></th>
       </tr>
     </tfoot>
-  </table>
+  </table>  
 </div>
 
 <script type="text/javascript" src="../static/js/cust/func_list.js"></script>
