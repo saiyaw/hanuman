@@ -11,7 +11,8 @@ before_script:
   - psql -c 'create database hanuman_dev;' -U postgres
   - psql -c "create user hanuman with password '123456' SUPERUSER;" -U postgres
   - psql -c 'GRANT ALL PRIVILEGES ON DATABASE hanuman_dev to hanuman;' -U postgres
+  - go vet -v ./...
 
 script:
-  bee run 
+  go build 
     
