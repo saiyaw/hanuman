@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"strconv"
+	"strings"
 	"time"
 
 	"github.com/astaxie/beego"
@@ -107,4 +108,36 @@ func (c *CandidateController) GetCandidateByID() {
 	candidate.GetCandidateByID()
 	c.Data["json"] = &candidate
 	c.ServeJSON()
+}
+
+func (c *CandidateController) GetCandidateByLabels() {
+
+	s := c.GetString("labelids")
+	//	log.Println(s, len(s))
+
+	labels := strings.Split(s, ",")
+	//	log.Println(labels, len(labels))
+
+	var ids []int
+	for _, v := range labels {
+		id, err := strconv.Atoi(v)
+		if err != nil {
+			continue
+		}
+		ids = append(ids, id)
+	}
+
+	//	log.Println(ids, len(ids))
+
+	var candidate models.Candidate
+	if len(ids) > 0 {
+		ps := models.GetCandidatesByLabels(ids)
+		c.Data["json"] = &ps
+	} else {
+		ps := candidate.GetCandidates()
+		c.Data["json"] = &ps
+	}
+
+	c.ServeJSON()
+
 }

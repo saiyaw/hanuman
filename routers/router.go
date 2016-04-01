@@ -16,6 +16,7 @@ func init() {
 	beego.Router("/insertcandidate", &controllers.CandidateController{}, "POST:InsertOneCandidate")
 	beego.Router("/updatecandidate", &controllers.CandidateController{}, "POST:UpdateOneCandidate")
 	beego.Router("/getcandidatebyid", &controllers.CandidateController{}, "POST:GetCandidateByID")
+	beego.Router("/getcandidatebylabels", &controllers.CandidateController{}, "POST:GetCandidateByLabels")
 
 	beego.Router("/insertcomment", &controllers.CommentController{}, "POST:InsertOneComment")
 	beego.Router("/getcommentlist", &controllers.CommentController{}, "POST:GetComments")

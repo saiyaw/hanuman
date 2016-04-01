@@ -25,3 +25,22 @@ function init_list_page() {
     }
 
 }
+
+function get_candidate_list_by_labels(labelids) {
+    var result = null;
+    $.ajax({
+        type: "POST",
+        async: false,
+        url: "/getcandidatebylabels",
+        data: {
+            "labelids": labelids
+        },
+        success: function(r) {
+            result = r;
+
+        }
+    });
+
+
+    return result;
+}

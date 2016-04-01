@@ -19,14 +19,18 @@ $(function() {
 
         // Event Handlers
         $button.on('click', function() {
-            $checkbox.prop('checked', !$checkbox.is(':checked'));
-            $checkbox.triggerHandler('change');
+
+            var $box = $(this);
+
+            $checkbox.prop('checked', false);
+            $box.prop('checked', !$box.is(':checked'));
+     //       $box.triggerHandler('change');
             updateDisplay();
 
             if ($checkbox.is(':checked')) {
 
-      //          var labelid = $button.attr("id").substr($button.attr("id").indexOf("_") + 1);
-      //          alert(labelid);
+                //          var labelid = $button.attr("id").substr($button.attr("id").indexOf("_") + 1);
+                //          alert(labelid);
             }
         });
         $checkbox.on('change', function() {
@@ -73,7 +77,7 @@ $(function() {
 
 
     var candidatetable = $('#table_candidate_list').DataTable({
-        stateSave: true,
+        //      stateSave: true,
         language: {
 
             "sProcessing": "处理中...",
@@ -131,6 +135,8 @@ $(function() {
         }, {
             data: 12
         }, {
+            data: 13
+        }, {
             "data": null,
             "defaultContent": "<button class='btn btn-link'><span class='glyphicon glyphicon-edit'></span></button>"
         }]
@@ -142,6 +148,9 @@ $(function() {
     candidatetable.column(9).visible(false);
     candidatetable.column(11).visible(false);
     candidatetable.column(12).visible(false);
+    candidatetable.column(13).visible(false);
+
+    //    candidatetable.column(11).searchable(true);
 
     $('#table_candidate_list tbody').on('click', 'button', function() {
         var pdata = candidatetable.row($(this).parents('tr')).data();
@@ -171,11 +180,20 @@ $(function() {
 
         var selectedlabels = $.find("button.btn.btn-primary.active");
         var labelid = [];
-        $.each(selectedlabels, function(index, value){
-            var labelid = $button.attr("id").substr($button.attr("id").indexOf("_") + 1);
-                alert(labelid);
-
+        $.each(selectedlabels, function(index, value) {
+            //      var id = value.id.substr(value.id.indexOf("_") + 1);
+            //      labelid.push(id);
+            var text = value.textContent;
+            labelid.push(text);
         });
+
+        //       alert(labelid.join());
+//        var candidates = get_candidate_list_by_labels(labelid.join());
+
+//        candidatetable.dataSrc = candidates;
+        candidatetable.column(13).search(labelid[0]).draw();
     });
+
+
 
 });

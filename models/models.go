@@ -8,7 +8,7 @@ import (
 )
 
 func init() {
-	orm.Debug = false
+	orm.Debug = true
 	orm.RegisterDriver("postgres", orm.DRPostgres)
 	connstr := "user=hanuman password=123456 sslmode=disable dbname=" + beego.AppConfig.String("dbname")
 	orm.RegisterDataBase("default", "postgres", connstr)

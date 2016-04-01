@@ -96,3 +96,18 @@ func (c Candidate) GetCandidateLabels() string {
 
 	return result
 }
+
+func GetCandidatesByLabels(ids []int) []Candidate {
+	var result []Candidate
+	o := orm.NewOrm()
+	var list orm.ParamsList
+	qs := o.QueryTable("candidate_label")
+	qs.GroupBy("candidateid").Filter("labelid__in", ids).ValuesFlat(&list, "candidateid")
+	for _, v := range list {
+		var c Candidate
+		c.Id = v.(int64)
+		c.GetCandidateByID()
+		result = append(result, c)
+	}
+	return result
+}
