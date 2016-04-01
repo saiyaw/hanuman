@@ -18,7 +18,9 @@ function init_list_page() {
     if (labels != null) {
         $.each(labels, function(index, value) {
 
-            str = "<span class='button-checkbox'>   <button type='button' class='btn' data-color='primary' id=label_" + value[0] + ">" + value[1] + "</button>  <input type='checkbox' class='hidden'/> </span>";
+ //           str = "<span class='button-checkbox'>   <button type='button' class='btn' data-color='primary' id=label_" + value[0] + ">" + value[1] + "</button>  <input type='checkbox' class='hidden'/> </span>";
+
+ str = "<label class='btn btn-primary'><input type='radio' name='options' id='label_'" +value[0] +" autocomplete='off'>" +  value[1]  + "</label>";
 
             $("#div_label_list").append(str);
         });

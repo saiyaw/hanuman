@@ -1,83 +1,8 @@
 $(function() {
     init_list_page();
 
-    $('.button-checkbox').each(function() {
-
-        // Settings
-        var $widget = $(this),
-            $button = $widget.find('button'),
-            $checkbox = $widget.find('input:checkbox'),
-            color = $button.data('color'),
-            settings = {
-                on: {
-                    icon: 'glyphicon glyphicon-check'
-                },
-                off: {
-                    icon: 'glyphicon glyphicon-unchecked'
-                }
-            };
-
-        // Event Handlers
-        $button.on('click', function() {
-
-            var $box = $(this);
-
-            $checkbox.prop('checked', false);
-            $box.prop('checked', !$box.is(':checked'));
-     //       $box.triggerHandler('change');
-            updateDisplay();
-
-            if ($checkbox.is(':checked')) {
-
-                //          var labelid = $button.attr("id").substr($button.attr("id").indexOf("_") + 1);
-                //          alert(labelid);
-            }
-        });
-        $checkbox.on('change', function() {
-            updateDisplay();
-        });
-
-        // Actions
-        function updateDisplay() {
-            var isChecked = $checkbox.is(':checked');
-
-            // Set the button's state
-            $button.data('state', (isChecked) ? "on" : "off");
-            /*
-                        // Set the button's icon
-                        $button.find('.state-icon')
-                            .removeClass()
-                            .addClass('state-icon ' + settings[$button.data('state')].icon);
-            */
-            // Update the button's color
-            if (isChecked) {
-                $button
-                    .removeClass('btn-default')
-                    .addClass('btn-' + color + ' active');
-            } else {
-                $button
-                    .removeClass('btn-' + color + ' active')
-                    .addClass('btn-default');
-            }
-        }
-
-        // Initialization
-        function init() {
-
-            updateDisplay();
-            /*
-                        // Inject the icon if applicable
-                        if ($button.find('.state-icon').length == 0) {
-                            $button.prepend('<i class="state-icon ' + settings[$button.data('state')].icon + '"></i> ');
-                        }
-            */
-        }
-        init();
-    });
-
-
     var candidatetable = $('#table_candidate_list').DataTable({
-        //      stateSave: true,
+   //     stateSave: true,
         language: {
 
             "sProcessing": "处理中...",
@@ -178,7 +103,7 @@ $(function() {
 
     $("#btn_label_filter").click(function() {
 
-        var selectedlabels = $.find("button.btn.btn-primary.active");
+        var selectedlabels = $.find("label.btn.btn-primary.active");
         var labelid = [];
         $.each(selectedlabels, function(index, value) {
             //      var id = value.id.substr(value.id.indexOf("_") + 1);
@@ -188,9 +113,9 @@ $(function() {
         });
 
         //       alert(labelid.join());
-//        var candidates = get_candidate_list_by_labels(labelid.join());
+        //        var candidates = get_candidate_list_by_labels(labelid.join());
 
-//        candidatetable.dataSrc = candidates;
+        //        candidatetable.dataSrc = candidates;
         candidatetable.column(13).search(labelid[0]).draw();
     });
 

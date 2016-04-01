@@ -2,7 +2,7 @@
   <div class="panel-heading">标签</div>
   <div class="panel-body">
     <div class="container-fluid">
-      <div id="div_label_list">
+      <div id="div_label_list"  class="btn-group" data-toggle="buttons">
       <!--
         <div class="col-xs-3">
           <div class="input-group">
