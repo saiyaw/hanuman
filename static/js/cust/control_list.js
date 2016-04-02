@@ -104,19 +104,23 @@ $(function() {
     $("#btn_label_filter").click(function() {
 
         var selectedlabels = $.find("label.btn.btn-primary.active");
-        var labelid = [];
+        var labelids = [];
         $.each(selectedlabels, function(index, value) {
             //      var id = value.id.substr(value.id.indexOf("_") + 1);
             //      labelid.push(id);
             var text = value.textContent;
-            labelid.push(text);
+            labelids.push(text);
         });
 
         //       alert(labelid.join());
         //        var candidates = get_candidate_list_by_labels(labelid.join());
 
         //        candidatetable.dataSrc = candidates;
-        candidatetable.column(13).search(labelid[0]).draw();
+        if (labelids.length > 0){
+            candidatetable.column(13).search(labelids[0]).draw();
+        }
+
+        
     });
 
 
